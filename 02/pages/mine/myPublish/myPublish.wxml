@@ -1,0 +1,101 @@
+<!--pages/mine/myPublish/myPublish.wxml-->
+<!-- ZB NewPublish -->
+<view class='publishTab'>
+  <view class='publishTab-item {{itemType==0?"active":""}}' data-blockType='askAndAnswer' data-type='0' bindtap='changeItem'>问答</view>
+  <view class='publishTab-item {{itemType==1?"active":""}}' data-blockType='topic' data-type='1' bindtap='changeItem'>话题讨论</view>
+  <view class='publishTab-item {{itemType==2?"active":""}}' data-blockType='designReform' data-type='2' bindtap='changeItem'>设计改造</view>
+</view>
+<view class="list">
+  <!--老的列表 <view class="list-item" wx:for='{{List}}' wx:key="{{index}}">
+    <view class="item-content" bindtap='toDetail' data-id='{{item}}'>
+
+      <image src="{{item.supplyDemandCoverPic?resourcePath+item.supplyDemandCoverPic.picPath:staticImageUrl+'news_pic_nor.png'}}"></image>
+
+      <view class="item-info">
+        <view class="title ellipsis">{{item.title}}</view>
+        <view class="describe ellipsis">{{item.description}}</view>
+        <view class="data-box">
+          <view class="glance-over">
+            <image src="{{staticImageUrl}}fabu_icon_see.png"></image>{{item.viewNum}}
+          </view>
+          <view class='comment'>
+            <image src='{{staticImageUrl}}fabu_icon_comment.png'></image>{{item.reviewsCount=='null'?'0':item.reviewsCount}}
+          </view>
+          <view class="time">
+            <image src="{{staticImageUrl}}fabu_icon_time.png"></image>{{item.gmtModified}}
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="item-footer">
+      <view class='compile' bindtap='editFun' data-index='{{index}}'>编辑</view>
+      <view class="midcourt-line "></view>
+      <view class='putaway' bindtap='lowerFrame' data-id="{{item.supplyDemandId}}" data-status="{{!item.pushStatus?1:0}}">
+        删除
+      </view>
+    </view>
+  </view> -->
+
+  <!-- 新的列表 -->
+  <block wx:if='{{itemType==0}}'>
+    <view class='list-item' wx:for='{{List}}' wx:key="{{index}}">
+      <view class='list-item-top' data-type='question' data-id="{{item.id}}" data-count="{{item.reviewsCount}}" bindtap="toDetail">
+        <view class='left-item'>
+          <view class='left-txt'>{{item.title}}</view>
+          <view class='left-time'>{{item.gmtCreate}}</view>
+        </view>
+        <view class='right-item' wx:if="{{item.coverPicPath}}">
+          <image class='item-img' mode="aspectFill" src='{{item.coverPicPath?resourcePath+item.coverPicPath:""}}'></image>
+        </view>
+      </view>
+      <view class='list-item-button'>
+        <image class='delete' data-id="{{item.id}}" catchtap='delete' src='{{staticImageUrl}}me_icon_deleted.png'></image>
+        <image class='edit' catchtap='editFun' data-type='{{item.blockType}}' data-item="{{item}}" src='{{staticImageUrl}}me_icon_edit.png'></image>
+      </view>
+    </view>
+  </block>
+
+  <block wx:if='{{itemType==1}}'>
+    <view class='list-item' wx:for='{{List}}' wx:key="{{index}}">
+      <view class='list-item-top' data-type='topic' data-id="{{item.id}}" bindtap='toDetail'>
+        <view class='left-item'>
+          <view class='left'>#{{item.title}}#</view>
+          <view class='left-content' wx:if="{{item.jsonContent}}">{{item.jsonContent}}</view>
+          <view class="left_pic" wx:if="{{item.picPath}}">
+            <scroll-view class='scrollBox' scroll-x='{{true}}' scroll-left="0" scroll-with-animation>
+              <view class='pic_item' wx:for='{{item.picPath}}' wx:key wx:for-item="subitem">
+                  <image class='scroll-img' mode='aspectFill' src="{{resourcePath+subitem}}"></image>
+              </view>
+            </scroll-view>
+          </view>
+          <view class='left-time'>{{item.gmtCreate}}</view>
+        </view>
+      </view>
+      <view class='list-item-button'>
+        <image class='delete' data-id="{{item.replyId}}" catchtap='deleteFn' src='{{staticImageUrl}}me_icon_deleted.png'></image>
+        <image class='edit' catchtap='editFun' data-item="{{item}}" data-type='{{item.blockType}}' src='{{staticImageUrl}}me_icon_edit.png'></image>
+      </view>
+    </view>
+  </block>
+
+  <block wx:if='{{itemType==2}}'>
+    <view class='list-item-box' wx:for='{{List}}' wx:key="{{index}}">
+      <view class='list-item-box-top' bindtap='toDetail' data-id="{{item.id}}" data-type='design'>
+        <view class='item-top-tit'>{{item.content}}</view>
+        <image class='list-item-img' mode="aspectFill" wx:if="{{item.coverPicPath}}" src='{{resourcePath+item.coverPicPath}}'></image>
+      </view>
+      <view class='list-item-box-button'>
+        <image class='delete' data-id="{{item.id}}" catchtap='delete' src='{{staticImageUrl}}me_icon_deleted.png'></image>
+        <image class='edit' catchtap='editFun' data-item="{{item}}" data-type='{{item.blockType}}' src='{{staticImageUrl}}me_icon_edit.png'></image>
+      </view>
+    </view>
+  </block>
+  <empty-page emptyPageObj="{{emptyPageObj}}" wx:if="{{List.length==0}}"></empty-page>
+</view>
+<!-- <image src="{{staticImageUrl}}add.png" class='publish' bindtap='toPublish'></image> -->
+<!-- <view class='publish' bindtap='toPublish'>发布</view> -->
+
+<!-- 快速导航模块 -->
+<!-- <import src="/component/newNav/newNav.wxml"/>
+  <template is="newNav"  data="{{ ...newNav }}"/> -->
+<jdNav></jdNav>

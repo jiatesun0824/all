@@ -1,0 +1,5 @@
+export * from './bottomMenu-types'
+export * from './home-types'
+export * from './user-types'
+export * from './common-types'
+export * from './release-types'

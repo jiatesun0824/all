@@ -1,0 +1,227 @@
+.commission {
+    background: #fafafa;
+    height: 100%;
+    header {
+        background-color: rgba(0, 0, 0, 0);
+        color: #fff;
+        border-bottom: none;
+        .icon-left {
+            background-image: url('../images/nav_icon_back_white.png')
+        }
+    }
+    .emptyBox {
+        text-align: center;
+        margin-top: 240px;
+        .emptyImg_box {
+            text-align: center;
+            .empty_img {
+                width: 200px;
+                height: 160px;
+            }
+        }
+        .empty_tit {
+            text-align: center;
+            font-size: 28px;
+            color: #999;
+            line-height: 40px;
+        }
+        .empty_but {
+            text-align: center;
+            margin-top: 100px;
+            .eb {
+                width: 220px;
+                height: 80px;
+                background-color: #ff6419;
+                border-radius: 40px;
+                display: inline-block;
+                font-size: 32px;
+                color: #fff;
+                line-height: 80px;
+                text-align: center;
+            }
+        }
+    }
+    // 选择日期
+    .select-date {
+        position: fixed;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        z-index: 1000002;
+    }
+    .select-date-active {
+        top: 68%;
+    }
+    // 选择日期
+    .head {
+        background-image: url("../images/wallet_bg_commission.png");
+        background-size: 100%;
+        padding-left: 58px;
+        padding-top: 117px;
+        width: 100%;
+        height: 240px;
+        box-sizing: border-box;
+        .rental {
+            height: 30px;
+            .rental_icon {
+                width: 30px;
+                height: 30px;
+                vertical-align: top;
+            }
+            .rental_tit {
+                color: #fff;
+                font-size: 30px;
+                font-family: PingFang-SC-Medium;
+                vertical-align: top;
+            }
+        }
+        .rentalnum {
+            color: #fff;
+            font-size: 36px;
+            font-family: PingFang-SC-Medium;
+            margin-top: 34px;
+        }
+        .income {
+            height: 100px;
+            .income_item {
+                float: left;
+                .income_tit {
+                    color: #fff;
+                    font-size: 24px;
+                    font-family: PingFang-SC-Medium;
+                }
+                .income_num {
+                    color: #fff;
+                    font-size: 32px;
+                    font-family: PingFang-SC-Medium;
+                }
+            }
+            .ml {
+                margin-left: 2.1100px;
+            }
+        }
+    }
+    .top {
+        background: #fff;
+        padding: 0 20px;
+        height: 120px;
+        padding-top: 50px;
+        .ctitle {
+            color: #333;
+            font-size: 28px;
+            font-family: PingFang-SC-Medium;
+        }
+        .icon_box {
+            float: left;
+            height: 120px;
+            margin-right: 24px;
+            display: flex;
+            align-items: center;
+            .top_icon {
+                width: 20px;
+                height: 15px;
+            }
+        }
+        .date {
+            width: 100%;
+            float: left;
+            height: 100px;
+            line-height: 100px;
+            box-sizing: border-box;
+            .mon {
+                color: #ff662e;
+                font-size: 32px;
+                font-family: PingFang-SC-Medium;
+                height: 60px;
+                line-height: 60px;
+            }
+            .year {
+                color: #666;
+                font-size: 20px;
+                font-family: PingFang-SC-Medium;
+                height: 60px;
+                line-height: 60px;
+            }
+            .date-tit {
+                font-size: 30px;
+                color: #333;
+                vertical-align: middle;
+            }
+            .top_icon {
+                width: 14px;
+                height: 19px;
+                vertical-align: middle;
+            }
+            .money {
+                color: #ff662e;
+                font-size: 32px;
+                font-family: PingFang-SC-Medium;
+                float: right;
+                height: 120px;
+                line-height: 120px;
+            }
+        }
+        .money {
+            color: #ff662e;
+            font-size: 32px;
+            font-family: PingFang-SC-Medium;
+            float: right;
+            height: 120px;
+            line-height: 120px;
+        }
+    }
+    .top_tit {
+        color: #666;
+        font-size: 20px;
+        font-family: PingFang-SC-Medium;
+        height: 60px;
+        line-height: 60px;
+        background: #fafafa;
+        padding: 0 20px;
+    }
+    .main {
+        margin-top: 24px;
+        height: 10rem;
+        position: relative;
+        .itembox {
+            background: #fafafa;
+            padding: 0 20px;
+            .item {
+                height: 119px;
+                padding-top: 27px;
+                border-bottom: solid 1px #e8e8e8;
+                .item_tit {
+                    height: 30px;
+                    .dot {
+                        color: #ff6419;
+                        font-size: 12px;
+                        float: left;
+                        margin-right: 16px;
+                    }
+                    .date_tit {
+                        color: #999;
+                        font-size: 20px;
+                        font-family: PingFang-SC-Medium;
+                        float: left;
+                    }
+                    .moneynum {
+                        color: #ff662e;
+                        font-size: 28px;
+                        font-family: PingFang-SC-Medium;
+                        float: right;
+                    }
+                }
+                .name {
+                    color: #333;
+                    font-size: 24px;
+                    font-family: PingFang-SC-Medium;
+                    margin-top: 28px;
+                    padding-left: 30px;
+                }
+            }
+            .item:nth-last-of-type(1) {
+                border-bottom: none;
+            }
+        }
+    }
+}

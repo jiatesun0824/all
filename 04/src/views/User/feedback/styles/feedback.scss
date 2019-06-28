@@ -1,0 +1,153 @@
+.feddback {
+    box-sizing: border-box;
+    background: #fff;
+    height: 100%;
+    padding-top: 88px;
+    overflow: hidden;
+    position: relative;
+    div,
+    textarea,
+    input {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    .main {
+        background: #fff;
+        border-top: solid 1px #e8e8e8;
+        padding: 30px;
+        position: relative;
+        .title {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 19px;
+            font-weight: bold;
+        }
+        .feedDetail {
+            width: 100%;
+            height: 400px;
+            background-color: #f5f5f5;
+            border-radius: 6px;
+            padding: 30px;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        .feedDetail_tit {
+            font-size: 24px;
+            color: #999;
+            position: absolute;
+            right: 70px;
+            top: 417px;
+        }
+        .imgBox {
+            width: 100%;
+            height: 200px;
+            background-color: #f5f5f5;
+            border-radius: 6px;
+            padding: 30px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            .img_item {
+                width: 140px;
+                height: 140px;
+                display: inline-block;
+                background-color: #ffffff;
+                border-radius: 6px;
+                margin-right: 23px;
+                position: relative;
+                vertical-align: middle;
+                .del_img {
+                    position: absolute;
+                    width: 44px;
+                    height: 44px;
+                    right: -22px;
+                    top: -22px;
+                }
+                .img_val {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .img_item:last-of-type {
+                margin-right: 0;
+            }
+            .upLoadImg {
+                width: 140px;
+                height: 140px;
+                background-color: #ffffff;
+                border-radius: 6px;
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+                margin-left: 15px;
+                input {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                    opacity: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+                img {
+                    margin: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .contact_inpu {
+            width: 690px;
+            height: 88px;
+            background-color: #f5f5f5;
+            border-radius: 6px;
+            line-height: 88px;
+            color: #333;
+            font-size: 28px;
+            padding: 0 34px;
+            margin-bottom: 60px;
+        }
+        .submit {
+            width: 690px;
+            height: 88px;
+            background-image: linear-gradient(-90deg, #ff6419 0%, #ff9e6f 100%), linear-gradient( #29cccc, #29cccc);
+            background-blend-mode: normal, normal;
+            border-radius: 40px;
+            text-align: center;
+            line-height: 88px;
+            color: #fff;
+        }
+        .feedRecord {
+            width: 100%;
+            text-align: center;
+            color: #333;
+            margin-top: 40px;
+        }
+    }
+    .toast {
+        width: 340px;
+        height: 280px;
+        background-color: rgba($color: #000000, $alpha: 0.7);
+        border-radius: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -140px;
+        margin-left: -170px;
+        img {
+            margin: 0 auto;
+            width: 88px;
+            height: 88px;
+            margin-top: 48px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        div {
+            text-align: center;
+            font-size: 26px;
+            color: #fff;
+            line-height: 48px;
+        }
+    }
+}

@@ -1,0 +1,66 @@
+更改apk的默认版本号：
+手动修改first目录下的:config.xml 与package.json文件，共两处：
+  "version": "1.0.4"
+把1.0.4改成新在版本号再进行构建。
+
+
+打包教程：
+https://www.cnblogs.com/a418120186/p/5475621.html
+
+cordova-hcp build                    //生成热更新配置文件
+
+#cordova bulid android               //用于测试的打包方式，生成已签名apk
+
+cordova build --release android     //生成没有签名的apk
+
+keytool -genkey -v -keystore mobile.keystore -alias mobile.keystore -keyalg RSA -validity 20000
+口令：sanduspace
+名字与姓氏：sanduspace
+单位名称：sanduspace
+组织名称：sanduspace
+城市：sz
+所在省：gd
+地区代码：cn
+
+密码短语：sanduspace
+
+//CI签名
+jarsigner -verbose -keystore C:\cordova\mobile.keystore  -signedjar C:\cordova\sanduspace_mobile_ci_1.0.3_hot.apk  C:\cordova\android-release-unsigned.apk mobile.keystore --storepass sanduspace
+
+//online 签名
+jarsigner -verbose -keystore C:\cordova\mobile.keystore  -signedjar C:\cordova\sanduspace_mobile_online_1.0.4_hot.apk  C:\cordova\android-release-unsigned.apk mobile.keystore --storepass sanduspace
+
+keytool -printcert -file META-INF\MOBILE_K.RSA
+
+
+
+
+
+
+
+
+
+
+
+插件相关：
+安装热更新插件（非开发）
+cordova plugin add cordova-hot-code-push-plugin
+卸载热更新开发插件
+cordova plugin remove cordova-hot-code-push-local-dev-addon
+
+
+
+Android 微信支付 & 支付宝支付 插件:
+
+文件下载
+cordova plugin add cordova-plugin-file-transfer
+微信支付
+cordova plugin add cordova-plugin-wechat --variable wechatappid=wx364f22b2d824b50d
+支付宝支付
+cordova plugin add cordova-plugin-alipay-v2 --variable APP_ID=2016092301955254 
+
+
+
+
+
+

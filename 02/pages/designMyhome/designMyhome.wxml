@@ -1,0 +1,41 @@
+<view class="design-myhome-wrap" style="height:{{windowHeight}}px;width:{{windowWidth}}px;background:#fff;">
+  <!-- 没有自己的户型 -->
+  <view wx:if="{{!hasHouse}}">
+    <view class="title">体验户型</view>
+    <view class="house-box" style="background-image:url('{{staticImageUrl}}huxing_bg.png')">
+      <view class="house-content">
+        <!-- <text> {{testHouseType.houseName}}</text> -->
+        <text></text>
+        <view>
+          <image src="{{staticImageUrl}}hone_3d.gif" class="roomGifImg"></image>
+        </view>
+      </view>
+    </view>
+    <view class="start-design" bindtap="toDesign">
+      开始设计
+    </view>
+    <view class="tip">点击【开始设计】立即体验</view>
+  </view>
+  <!-- 有自己的户型 -->
+  <view wx:if="{{hasHouse}}">
+    <view class="title">选择户型 开始设计</view>
+      <scroll-view scroll-y  class="radio-list" bindscrolltolower="lower">
+        <radio-group class="radio-group" bindchange="radioChange">
+          <view class="radio-item" bindtap='chooseRadio' data-id='{{item.id}}' wx:for="{{houseList}}" wx:key="{{index}}">
+            <view class="house-name-box">
+              <view class="house-name ellipsis">
+                {{item.designName}}
+              </view>
+              <view class="house-area">
+               {{item.houseTypeStr || '暂无'}} · {{item.totalArea}}㎡
+              </view>
+            </view>
+            <radio value="{{item.id}}" checked="{{item.id == id}}" color="#29CCCC" />
+          </view>
+        </radio-group>
+    </scroll-view>
+    <view class="bottom-design-btn">
+      <view class="btn" bindtap="designMyHome">开始设计</view>
+    </view>
+  </view>
+</view>

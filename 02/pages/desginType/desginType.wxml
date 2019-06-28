@@ -1,0 +1,7 @@
+<!--pages/desginType/desginType.wxml-->
+<view class='addHouse' bindtap='goHouse'></view>
+<view class='btn' bindtap='goHouse'>+ 添加户型</view>
+<view class='txt' bindtap='goHouse'>设计师会根据你的户型为你设计方案</view>
+<view class='addPlan' bindtap='goPlan'></view>
+<view class='btn2' bindtap='goPlan'>+ 添加方案</view>
+<view class='txt' bindtap='goPlan'>让设计师帮你修改你设计的方案</view>

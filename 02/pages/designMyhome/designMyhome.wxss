@@ -1,0 +1,141 @@
+page {
+  background: #fff;
+}
+
+.design-myhome-wrap {
+  background: #fff;
+}
+
+.design-myhome-wrap .title {
+  font-family: "微软雅黑";
+  font-size: 36rpx;
+  color: #333;
+  text-align: center;
+  padding-top: 60rpx;
+}
+
+.house-box {
+  width: 640rpx;
+  height: 640rpx;
+  margin: 30rpx 55rpx;
+  background-size: 100%;
+  border-radius: 10rpx;
+}
+
+.house-content {
+  text-align: center;
+}
+
+.house-content text {
+  padding-top: 46rpx;
+  font-size: 32rpx;
+  color: #fff;
+  display: block;
+}
+
+.house-content image {
+  width: 640rpx;
+  height: 400rpx;
+  border-radius: 10rpx;
+  margin: 0 auto;
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-design {
+  width: 420rpx;
+  height: 98rpx;
+  line-height: 98rpx;
+  background-image: linear-gradient(-90deg, rgba(46, 229, 168, 0.99) 0%, rgba(44, 217, 186, 0.99) 46%, rgba(41, 204, 204, 0.99) 100%),
+                      linear-gradient(#29cccc, #29cccc);
+  box-shadow: 0rpx 10rpx 30rpx 0rpx rgba(85, 217, 210, 0.4);
+  border-radius: 49rpx;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 100rpx;
+}
+
+.tip {
+  font-size: 24rpx;
+  color: #999;
+  text-align: center;
+  padding: 30rpx 0;
+}
+
+.radio-list {
+  margin-top: 60rpx;
+  height: 720rpx;
+}
+
+.radio-item {
+  padding: 30rpx;
+  background-color: #f5f5f5;
+  border-radius: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 55rpx;
+  margin-bottom: 30rpx;
+  height: 140rpx;
+}
+
+.house-name-box {
+  width: 85%;
+}
+
+.radio-item radio {
+  zoom: 100%;
+}
+
+.house-name {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+  max-width: 490rpx;
+}
+
+.house-area {
+  font-size: 28rpx;
+  color: #999;
+  padding-top: 15rpx;
+}
+
+radio .wx-radio-input {
+  background: #f5f5f5;
+  border: 4rpx solid #e9e9e9;
+}
+
+.bottom-design-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  text-align: center;
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+  z-index: 99;
+}
+
+.bottom-design-btn .btn {
+  width: 420rpx;
+  height: 98rpx;
+  margin-top: 45rpx;
+  line-height: 98rpx;
+  color: #fff;
+  font-size: 32rpx;
+  background-image: linear-gradient(-90deg, rgba(46, 229, 168, 0.99) 0%, rgba(44, 217, 186, 0.99) 46%, rgba(41, 204, 204, 0.99) 100%),
+                      linear-gradient(#29cccc, #29cccc);
+  box-shadow: 0 10rpx 30rpx 0 rgba(85, 217, 210, 0.4);
+  border-radius: 49rpx;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

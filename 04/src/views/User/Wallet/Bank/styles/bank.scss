@@ -1,0 +1,107 @@
+.bank {
+    height: 100%;
+    padding: 30px;
+    background: #eee;
+    box-sizing: border-box;
+    padding-top: 118px;
+    .item {
+        background: #fff;
+        height: 230px;
+        margin-bottom: 20px;
+        background: url('../images/card_bg.png');
+        background-size: 100%;
+        border-radius: 10px;
+        .asiteleft {
+            width: 129px;
+            float: left;
+            text-align: center;
+            padding-top: 30px;
+            .itemimgbox {
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                vertical-align: top;
+                text-align: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 30px;
+                background-color: #ffffff;
+                box-shadow: 0px 10px 21px 2px rgba(255, 151, 0, 0.52);
+            }
+            .itemimg {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+            }
+        }
+        .asiteright {
+            float: left;
+            width: 531px;
+            padding-top: 30px;
+            .title {
+                height: 30px;
+                margin-bottom: 19px;
+                .name {
+                    font-size: 36px;
+                    font-family: PingFang-SC-Medium;
+                    color: #fff;
+                    vertical-align: top;
+                }
+                .delete {
+                    float: right;
+                    width: 35px;
+                    height: 35px;
+                    font-family: PingFang-SC-Medium;
+                    color: #999;
+                }
+            }
+            .tit {
+                font-size: 20px;
+                font-family: PingFang-SC-Medium;
+                color: #fff;
+            }
+        }
+        .cardnum {
+            height: 70px;
+            line-height: 70px;
+            font-size: 60px;
+            font-family: PingFang-SC-Medium;
+            color: #fff;
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            margin-left: 80px;
+            float: left;
+            width: 100%;
+            .x {
+                padding-top: 20px;
+                color: #fff;
+                margin-right: 20px;
+            }
+        }
+    }
+    .additem {
+        background: #fff;
+        height: 230px;
+        margin-bottom: 20px;
+        font-size: 30px;
+        font-family: PingFang-SC-Medium;
+        color: #999;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        .box {
+            margin: 0 auto;
+            .add {
+                width: 31px;
+                height: 31px;
+                margin-right: 10px;
+                vertical-align: middle;
+            }
+            span {
+                vertical-align: middle;
+            }
+        }
+    }
+}

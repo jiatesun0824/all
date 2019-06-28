@@ -1,0 +1,51 @@
+/* pages/desginType/desginType.wxss */
+.addHouse,.addPlan{
+  width: 600rpx;
+	height: 320rpx;
+  margin-left: 75rpx;
+  border-radius: 10rpx;
+	opacity: 0.1;
+  
+}
+.addHouse{
+  background-color: #63a6e0;
+  margin-top: 180rpx;
+}
+.addPlan{
+  background-color: #45ccb1;
+  margin-top: -40rpx;
+}
+.btn{
+  width: 240rpx;
+	height: 88rpx;
+	border-radius: 44rpx;
+  font-size: 32rpx;
+  color: #ffffff;
+  text-align: center;
+  line-height: 88rpx;
+  position: relative;
+  left: 255rpx;
+  top: -240rpx;
+  background: rgba(99,166,224,1)
+}
+.btn2{
+  width: 240rpx;
+	height: 88rpx;
+	border-radius: 44rpx;
+  font-size: 32rpx;
+  color: #ffffff;
+  text-align: center;
+  line-height: 88rpx;
+  position: relative;
+  left: 255rpx;
+  top: -240rpx;
+  background-color: #45ccb1
+}
+.txt{
+  font-size: 28rpx;
+  color: #999999;
+  width: 750rpx;
+  text-align: center;
+  position: relative;
+  top: -210rpx;
+}

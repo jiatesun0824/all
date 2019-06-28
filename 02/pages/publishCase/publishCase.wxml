@@ -1,0 +1,97 @@
+<!--pages/publishCase/publishCase.wxml-->
+<view class='addHouseType' wx:if='{{houseTypeImg==""}}' bindtap='addHouseImg'>
+  <image class='img' src='{{staticImageUrl}}/page_add_pic.png'></image>
+  <view class='tip'>添加户型图</view>
+</view>
+<view class='addHouseType' wx:if='{{houseTypeImg!=""}}'>
+  <image src='{{resourcePath+houseTypeImg}}' class='houseImg'></image>
+</view>
+<view class='options' bindtap='space'>
+  <view class='title'>户型</view>
+  <view class='tip' wx:if='{{spaceTxt==""}}'>请选择</view>
+  <view class='content' wx:if='{{spaceTxt!=""}}'>{{spaceTxt}}</view>
+</view>
+<view class='options'>
+  <view class='title'>面积</view>
+  <!-- <view class='tip'>请输入户型面积（㎡）</view> -->
+  <input type='number' maxlength='4' placeholder='请输入户型面积（㎡）' placeholder-class='placeholder' class='input'></input>
+</view>
+<view class='options'>
+  <view class='title'>花费</view>
+  <!-- <view class='tip'>请输入装修造价（万元）</view> -->
+  <input type='number' maxlength='4' placeholder='请输入户型面积（㎡）' placeholder-class='placeholder' class='input'></input>
+</view>
+<view class='options' bindtap='style'>
+  <view class='title'>风格</view>
+  <view class='tip' wx:if='{{styleTxt==""}}'>请选择</view>
+  <view class='content' wx:if='{{styleTxt!=""}}'>{{styleTxt}}</view>
+</view>
+<view class='gary'></view>
+
+
+
+<view class='publish-message'>
+  <view class='message-form' style='min-height:{{windowHeight}}'>
+    <textarea class='title' 
+      bindinput='titleBlur'
+      value='{{title}}'
+      maxlength='30' 
+      auto-height 
+      placeholder='请输入标题（30字内）' placeholder-class='placeholder-class'>
+    </textarea>
+    <view class='txtOrPic' wx:for='{{content}}' wx:key="{{index}}">
+        <view class='txt' wx:if='{{item!=null || item!="undefind"}}'>
+          <textarea value='{{item.str1}}' class='text' auto-height maxlength='-1' bindinput='textInput' data-id='{{index}}'></textarea>
+        </view>
+        <view class='picture' wx:if='{{item.pic.length>0 && item.pic}}'>
+          <image class='pic' src='{{resourcePath+item.pic}}'  mode='aspectFill'></image>
+          <view class='picIcon'>图片</view>
+          <image src='{{staticImageUrl}}pic_icon_delete.png' 
+            data-type='图片'
+            data-index='{{index}}'
+            bindtap='deleteImg' 
+            class='delete'>
+          </image>
+        </view>
+      </view>
+    <!-- <view class='text'>{{text}}</view> -->
+  </view>
+  <view class='block'></view>
+</view>
+<cover-view class='bottom'>
+  <cover-view class='utility'>
+    <cover-image class='keybord' src="{{staticImageUrl}}/input_icon_down.png"></cover-image>
+    <cover-image class='image' src="{{staticImageUrl}}/input_icon_pic.png" bindtap='addImg'></cover-image>
+  </cover-view>
+  <cover-view class='submit' bindtap='publish'>发布</cover-view>
+</cover-view>
+
+
+
+
+
+<view class='spaceBck' wx:if='{{spaceFlag || styleFlag}}'></view>
+<view class='space' wx:if='{{spaceFlag}}'>
+  <view class='btn'>
+    <view class='cancle' bindtap='spaceCancle'>取消</view>
+    <view class='confirm' bindtap='spaceConfirm'>确定</view>
+  </view>
+  <picker-view class='picker' value="{{spaceIndex}}" bindchange="bindChange" indicator-style="height:50px;">
+    <picker-view-column class='picker-column'>
+        <view wx:for="{{roomArray}}" style="line-height: 50px">{{item}}</view>
+      </picker-view-column>
+      <picker-view-column class='picker-column'>
+        <view wx:for="{{livingAry}}" style="line-height: 50px">{{item}}</view>
+      </picker-view-column>  
+  </picker-view>
+</view>
+
+<view class='style' wx:if='{{styleFlag}}'>
+  <view class='btn'>
+    <view class='cancle' bindtap='styleCancle'>取消</view>
+    <view class='confirm' bindtap='styleConfirm'>确定</view>
+  </view>
+  <view class='option'>
+    <view class='{{styleIndex==index?"item2":"item"}}' wx:for='{{styleList}}' bindtap='styleCheck' data-index='{{index}}'>{{item.styleName}}</view>
+  </view>
+</view>

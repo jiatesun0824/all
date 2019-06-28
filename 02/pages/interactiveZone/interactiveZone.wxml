@@ -1,0 +1,161 @@
+<view class="interactiveZone-wrap">
+  <view class="interactive-top">
+    <view class="top-wrap">
+      <view class="search-box" bindtap="searchFocus">
+        <image src="{{staticImageUrl}}icon-search.png" mode="aspectFit" class="search-icon"></image>
+        <view class="input">搜索你想要的</view>
+      </view>
+      <view class="tab-box">
+        <view class="tab-item {{tabIndex==0?'active':''}}" data-type='question' data-index="0" bindtap="tabClick">
+          问答
+        </view>
+        <view class="tab-item {{tabIndex==1?'active':''}}" data-type='share' data-index="1" bindtap="tabClick">
+          大咖分享
+        </view>
+        <view class="tab-item {{tabIndex==2?'active':''}}" data-type='design' data-index="2" bindtap="tabClick">
+          设计改造
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="interactive-content">
+    <view wx:if="{{tabIndex==0}}">
+      <view class="question-list list-top" wx:for="{{questionListOne}}" wx:key="{{index}}">
+        <view class="question-item" data-id="{{item.id}}" data-count="{{item.reviewsCount}}" bindtap="navigate" data-type='question'>
+          <view class="question-msg-box" style="width:{{item.coverPicPath?'80%':'100%'}}">
+            <view class="question-title">{{item.title}}</view>
+            <view class="question-detail">
+              <view class="answers">{{item.viewCount+item.viewVirtualCount}}查看 · {{item.reviewsCount}}回答</view>
+              <view class="time">{{item.publishTime}}</view>
+            </view>
+          </view>
+          <view class="img-box" wx:if="{{item.coverPicPath}}">
+            <image src="{{resourcePath+item.coverPicPath}}" mode="aspectFill"></image>
+          </view>
+        </view>
+      </view>
+      <view class="disscuss-box" wx:if="{{disscuss.length != 0}}">
+        <view class="title">
+          <text class="disscuss-big-title">大家都在讨论</text>
+        </view>
+        <scroll-view class="scroll-view_H" scroll-x style='width:100vw;' bindscrolltolower="getMoreTopic">
+          <item class="item scroll-view-item" wx:for="{{disscuss}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="navigate" data-type='topic' wx:if="{{item.status == 1}}">
+            <view class="disscuss-msg lunbo{{(index+3)%3+1}}" style="background-image:url('{{staticImageUrl}}hudong_bg_0{{(index+3)%3+1}}.png');">
+              <view class="disscuss-title">#{{item.title}}#</view>
+              <view class="disscuss-text">{{item.content}}</view>
+              <view class="disscuss-bottom">
+                <view class="disscuss-desc">
+                  {{item.reviewsCount}}篇经验 · {{item.viewCount+item.viewVirtualCount}}人关注
+                </view>
+                <view class="joinIn-btn color-a{{(index+3)%3}}">参与话题</view>
+              </view>
+            </view>
+          </item>
+        </scroll-view>
+      </view>
+      <view class="question-list" wx:for="{{questionListTwo}}" wx:key="{{index}}">
+        <view class="question-item" data-id="{{item.id}}" bindtap="navigate" data-type='question'>
+          <view class="question-msg-box" style="width:{{item.coverPicPath?'80%':'100%;margin-right:0;'}};x">
+            <view class="question-title">{{item.title}}</view>
+            <view class="question-detail">
+              <view class="answers">{{item.viewCount+item.viewVirtualCount}}查看 · {{item.reviewsCount}}回答</view>
+              <view class="time">{{item.publishTime}}</view>
+            </view>
+          </view>
+          <view class="img-box" wx:if="{{item.coverPicPath}}">
+            <image src="{{resourcePath+item.coverPicPath}}" mode="aspectFill"></image>
+          </view>
+        </view>
+      </view>
+      <view class="no-more-tip" wx:if="{{noMore}}">
+        - 没有更多数据了 -
+      </view>
+    </view>
+    <view wx:if="{{tabIndex==1}}">
+      <view class='ace' wx:for='{{shareList}}' wx:key="{{index}}">
+        <!-- 案例 -->
+        <view class='plan' bindtap='navigate' data-type='plan' wx:if='{{item.shareType==1}}' data-id='{{item.id}}'>
+          <image class='topImg' src='{{resourcePath+item.coverPicPath}}' mode='aspectFill'></image>
+          <view class='infoArea'>
+            <view class='title'>{{item.title}}</view>
+            <view class='planInfo'>
+              {{item.bedroomNum?item.bedroomNum+'室':''}}{{item.livingRoomNum?item.livingRoomNum+'厅':''}} {{item.houseStyle}} {{item.houseArea>0?item.houseArea+'m²':''}}
+            </view>
+            <view class='postInfo'>
+              <view class='author'>
+                <image class='headPic' src='{{item.authorPic?resourcePath+item.authorPic:staticImageUrl+"index.png"}}'></image>
+                <view class='name'>{{item.author}}</view>
+              </view>
+              <view class='popular'>
+                {{item.viewCount+item.viewVirtualCount}}查看 · {{item.reviewsCount}}评论
+              </view>
+            </view>
+          </view>
+          <view class='tag'>案例</view>
+        </view>
+        <!-- 博文 -->
+        <!--图片、头像-->
+        <view class='article' bindtap='navigate' data-type='post' wx:if='{{item.shareType==0}}' data-id='{{item.id}}'>
+          <image class='topImg' src='{{resourcePath+item.coverPicPath}}' mode='aspectFill'></image>
+          <view class='infoArea'>
+            <view class='title'>{{item.title}}</view>
+            <view class='postInfo'>
+              <view class='author'>
+                <image class='headPic' src='{{item.authorPic?resourcePath+item.authorPic:staticImageUrl+"index.png"}}'></image>
+                <view class='name'>{{item.author}}</view>
+              </view>
+              <view class='popular'>
+                {{item.viewCount+item.viewVirtualCount}}查看 · {{item.reviewsCount}}评论
+              </view>
+            </view>
+          </view>
+          <view class='tag'>博文</view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+  <!-- 图片 -->
+  <view wx:if="{{tabIndex==2}}" style='margin-top:190rpx'>
+    <view class='design' bindtap='navigate' data-type='design' wx:for='{{designList}}' wx:key="{{index}}" data-id='{{item.id}}'>
+      <view class='title' wx:if='{{item.content}}'>{{item.content}}</view>
+      <view class='designImg'>
+        <image class='desImg' src='{{resourcePath+item.coverPicPath}}' mode='aspectFill'></image>
+        <!-- <view class='desTag' wx:if='{{item.reviewsCount>0}}'>{{item.reviewsCount}}位设计师已回复</view> -->
+      </view>
+      <view class='infoArea'>
+        <view class='postInfo'>
+          <view class='author'>
+            <view class='name'>{{item.publishUserName}}</view>
+          </view>
+          <view class='popular'>
+            {{item.reviewsCount || 0}}评论
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view>                                                                                                                     
+  <view animation="{{rotateAnimation}}" class="btn {{isInteractive?'noshadow':'shadow'}}" bindtap="interactiveBtnClick">
+    <image src="{{staticImageUrl}}hudong_add.png"></image>
+  </view>
+
+  <!--  悬浮按钮弹窗 -->
+  <view class="btn-pop" wx:if="{{isInteractive}}" catchtouchmove='true'>
+    <view class="activeBtn-box">
+      <button class="activeBtn" animation="{{animationData}}" open-type='getUserInfo' bindgetuserinfo='publish' data-type='question' lang='zh_CN' wx:if='{{userInfoStatus==0}}'>
+        <image src="{{staticImageUrl}}hudong_add_icon_01.png" class="active-item-icon"></image>发布问答
+      </button>
+      <button class="activeBtn" animation="{{animationData2}}" open-type='getUserInfo' bindgetuserinfo='publish' data-type='desgin' lang='zh_CN' wx:if='{{userInfoStatus==0}}'>
+        <image src="{{staticImageUrl}}hudong_add_icon_02.png" class="active-item-icon"></image>设计改造
+      </button>
+      <view class="activeBtn" animation="{{animationData}}" bindtap='publish' data-type='question' wx:if='{{userInfoStatus==1}}'>
+         <image src="{{staticImageUrl}}hudong_add_icon_01.png" class="active-item-icon"></image>发布问答
+      </view>
+      <view class="activeBtn" animation="{{animationData2}}" bindtap='publish' data-type='desgin' wx:if='{{userInfoStatus==1}}'>
+        <image src="{{staticImageUrl}}hudong_add_icon_02.png" class="active-item-icon"></image>设计改造
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+
+<view class="issue-wrap">
+  <textarea class="textArea-text" auto-focus="{{true}}" fixed focus="{{focus}}" cursor-spacing="60" auto-height="{{true}}" placeholder="请详细描述你的问题，建议附上图更直观" bindfocus="textareaFocus" bindinput="textareaInput" bindblur='textareaBlur' maxlength="100" placeholder-class='placeholder-class' value="{{text}}"/>
+  <view class="image-box">
+     <view wx:if="{{pics.length != 0}}" class="uploaded-img upload" wx:for="{{pics}}" wx:key="{{index}}">
+      <image src="{{resourcePath+item.url}}" class="img" mode="aspectFill"> </image>
+      <image src="{{staticImageUrl}}pic_icon_delete.png" data-index="{{index}}" data-type="edit" bindtap="deletedPic" class="deleted"></image>
+    </view>
+    <view wx:if="{{uploadedImg}}" class="uploaded-img upload" wx:for="{{uploadedImg}}" wx:key="{{index}}">
+      <image src="{{item}}" class="img" mode="aspectFill"> </image>
+      <image src="{{staticImageUrl}}pic_icon_delete2.png" data-index="{{index}}" data-type="noEdit" bindtap="deletedUpload" class="deleted" mode="aspectFill"></image>
+    </view>
+    <view class="uploaded-img deletedImg" wx:if="{{pics.length+uploadedImg.length >= 6?false:true}}">
+      <image src="{{staticImageUrl}}icon-addimg.png" class="img" bindtap="uploaded"></image>
+    </view>
+  </view>
+  <view class="bottom" style="bottom:{{bottomHeight}}px;">
+    <bottom-option height="{{bottomHeight}}" send="{{false}}" issue="{{true}}" bindaddImg="uploaded" bindreTract="keyboardSwitch" issue="{{true}}" bindtoSend="sendQuestion" userInfoStatus='{{userInfoStatus}}'></bottom-option>
+  </view>
+</view>

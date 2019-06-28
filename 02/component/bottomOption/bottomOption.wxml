@@ -1,0 +1,30 @@
+<view class="bottom-btn-wrap">
+  <view class="bottom-image-box">
+    <image src="{{staticImageUrl}}{{height !=0?'input_icon_down.png':'input_icon_up.png'}}" bindtap="reTract" />
+    <image src="{{staticImageUrl}}input_icon_pic.png" wx:if="{{disscussEdit}}" bindtap="addImg" />
+  </view>
+  <!-- <view>{{userInfoStatus}}</view> -->
+  <button open-type='getUserInfo' class="send-btn" bindgetuserinfo="toSend" lang='zh_CN' wx:if='{{userInfoStatus==0}}'>
+    <view wx:if="{{disscussEdit}}">
+      <view wx:if="{{!issue}}">完成</view>
+      <view wx:else>发送</view>
+    </view>
+    <view wx:else>
+      <view wx:if="{{!send&&issue}}">发布</view>
+      <view wx:else>发送</view>
+    </view>
+  </button>
+
+
+  <view class="send-btn" bindtap="toSend" wx:if='{{userInfoStatus==1}}'>
+    <view wx:if="{{disscussEdit}}">
+      <view wx:if="{{!issue}}">完成</view>
+      <view wx:else>发送</view>
+    </view>
+    <view wx:else>
+      <view wx:if="{{!send&&issue}}">发布</view>
+      <view wx:else>发送</view>
+    </view>
+  </view>
+
+</view>

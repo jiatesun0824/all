@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "jdNav": "/component/jdNav/jdNav",
+    "empty-page": "/component/emptyPage/emptyPage"
+  },
+  "navigationBarTitleText": "话题讨论"
+}

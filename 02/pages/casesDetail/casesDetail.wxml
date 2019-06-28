@@ -1,0 +1,151 @@
+<view wx:if="{{isShowDetail}}">
+<!--pages/casesDetail/casesDetail.wxml-->
+<import src="../../utils/wxParse/wxParse.wxml" />
+<scroll-view scroll-into-view='{{scrollId}}' scroll-y='true' style='height:{{scrollHeight}}px;' scroll-with-animation='true' bindscrolltolower='reFearch'>
+<view id='top'></view>
+<view class='top' wx:if='{{picArr.length>0 || detail.planId}}'>
+  <swiper class='banner'  circular bindchange='swiperChange' bindchange='swiper'>
+    <swiper-item wx:if='{{detail.planId}}' >
+      <image class='bannerImg' src='{{resourcePath + detail.planPicUrl}}' mode='aspectFill'></image>
+      <image class='tag' src="{{staticImageUrl}}case-logo.gif" bindtap='formToThreeDD' data-item='{{planInfo}}' data-type='master'></image>
+    </swiper-item>
+    <swiper-item wx:if='{{picArr.length>0}}' wx:for='{{picArr}}' wx:key="{{index}}">
+      <image class='bannerImg' src='{{item}}'></image>
+    </swiper-item>
+  </swiper>
+  <view class='imgNum'>{{swiperCurrent}}/{{imgTotal}}</view>
+</view>
+<view class='title'>{{detail.title}}</view>
+<view class='author'>
+  <view class='head'>
+    <image class='headPic' src='{{detail.authorPic?resourcePath+detail.authorPic:staticImageUrl+"index.png"}}'></image>
+    <view class='name'>
+      <view class='nick'>{{detail.author}}</view>
+      <view class='time'>{{detail.publishTime}}</view>
+    </view>
+  </view>
+  <image class='unitly' src='{{staticImageUrl}}/hudong_icon_more_02.png' bindtap='delete' data-type='post' wx:if='{{detail.createUserId==userId}}'></image>
+</view>
+<image class='houseTypeImg' src='{{resourcePath+detail.housePicUrl}}' wx:if='{{detail.housePicUrl}}' mode='widthFix'></image>
+<view class='houseInfo'>
+  <view class='info'>
+    <view class='tit'>户型</view>
+    <view class='data' wx:if='{{detail.bedroomNum || detail.livingRoomNum}}'>{{detail.bedroomNum?detail.bedroomNum+"室":''}}{{detail.livingRoomNum?detail.livingRoomNum+"厅":''}}</view>
+    <view class='data' wx:if='{{!detail.bedroomNum && !detail.livingRoomNum}}'>-</view>
+  </view>
+  <view class='info'>
+    <view class='tit'>面积</view>
+    <view class='data' wx:if='{{detail.houseArea}}'>{{detail.houseArea}}m²</view>
+    <view class='data' wx:if='{{!detail.houseArea}}'>-</view>
+  </view>
+  <view class='info'>
+    <view class='tit'>花费</view>
+    <view class='data' wx:if='{{detail.houseCost}}'>{{detail.houseCost}}万元</view>
+    <view class='data' wx:if='{{!detail.houseCost}}'>-</view>
+  </view>
+  <view class='info'>
+    <view class='tit'>风格</view>
+    <view class='data'>{{detail.houseStyle?detail.houseStyle:"-"}}</view>
+  </view>
+</view>
+<view class='message' wx:if='{{detail.content}}'>
+  <view>{{detail.content}}</view>
+</view>
+<view class='message' wx:if='{{detail.jsonContent}}'>
+  <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+</view>
+<view class='gary'></view>
+
+
+<view class='comment'>
+      <view class='top' id='comment'>
+        <view class='left fl'>评论 {{commentTotal>999?'999+':(commentTotal || 0)}}</view>
+      </view>
+      <view class='noComment' wx:if='{{commentList.length<=0}}'>
+        暂无评论，来抢个沙发吧~
+      </view>
+      <view class='content' wx:for='{{commentList}}' wx:key="{{index}}" wx:if='{{commentList.length>0}}'>
+        <view class='info'>
+          <view class='personal'>
+            <image class='head' src='{{item.authorPic?item.authorPic:staticImageUrl+"index.png"}}'></image>
+            <view class='goStore' wx:if="{{item.shopId>0}}" data-id='{{item.shopId}}' catchtap='goStore'>进店铺</view>
+             <view class='name'>
+              <view class='nick'>{{item.creator?item.creator:'匿名用户'}}</view>
+              <view class='time'>{{item.gmtCreate}}</view>
+            </view>
+          </view>
+          <!-- <view class='line' wx:if='{{item.delAuthor}}'></view> -->
+          <view class='like' bindtap='getZoneStatus' data-id='{{item.id}}' data-status='{{item.isLike}}' data-index='{{index}}'>
+            <view class='{{item.likeFlag!=1?"txt":"txtActive"}}' wx:if='{{item.likeCount+item.likeVirtualCount>0}}'>{{item.likeCount+item.likeVirtualCount}}</view>
+            <view class='{{item.likeFlag!=1?"txt":"txtActive"}}' wx:if='{{item.likeCount+item.likeVirtualCount<=0}}'>0</view>
+            <image src='{{item.likeFlag!=1?staticImageUrl+"news_icon_like_nor.png":staticImageUrl+"news_icon_like_sct.png"}}'></image>
+          </view>
+          <image class='unitly' src='{{staticImageUrl}}/hudong_icon_more_02.png' bindtap='delete' data-type='comment' data-id='{{item.id}}' wx:if='{{item.replyUserId==userId}}'></image>
+        </view>
+        
+        <view class='textCot'>
+          <text space="nbsp">{{item.content}}</text>
+        </view>
+        <view class='plan' wx:if='{{item.designPlanRecommendedResult}}'>
+          <image class='image' src='{{resourcePath+item.designPlanRecommendedResult.coverPath}}'></image>
+          <image class='tag' src="{{imgUrl}}case-logo.gif" bindtap='toThreeD' data-item='{{item.designPlanRecommendedResult}}' data-type='salver' data-index='{{index}}'></image>
+        </view>
+        <view class='plan' wx:if='{{item.mydecorationPlanVo}}'>
+          <image class='image' src='{{resourcePath+item.mydecorationPlanVo.planPicPath}}'></image>
+          <image class='tag' src="{{imgUrl}}case-logo.gif" bindtap='toThreeD' data-item='{{item.mydecorationPlanVo}}' data-type='salver' data-index='{{index}}'></image>
+        </view>
+        <view class='house' wx:if='{{item.baseHouse}}' bindtap='houseTodetail' data-item='{{item.baseHouse}}'>
+          <image class='image' src='{{resourcePath+item.baseHouse.thumbnailPath}} '></image>
+          <image class='tag' src="{{imgUrl}}comment_icon_design.png"></image>
+        </view>
+
+        <view class='topMessage' catchtap='topMessage' data-item='{{item}}' wx:if='{{item.topReviewsAuthor}}'>· {{item.topSign?'取消置顶':'置顶留言'}}</view>
+        <view class='deleteBtn' catchtap='deleteBtn' data-item="{{item}}" data-id="{{item.id}}" wx:if='{{item.delAuthor}}'>· 删除留言</view>
+      <view class='garyLine'></view>
+      </view>
+      
+    </view>
+
+    <view class='reply'>
+      <view wx:if='{{!inputFlag}}' style='display:flex' >
+        <view class='replyTxt' bindtap='focus'>我来说点什么...</view>
+        <view class='untily' bindtap='scroll'>
+          <image class='replyIcon' src='{{staticImageUrl}}/news_icon_comment.png'></image>
+          <view class='num' wx:if='{{commentTotal>0}}'>{{commentTotal}}</view>
+        </view>
+        <view class='untily'  bindtap='collection'>
+          <image class='replyIcon' src='{{detail.collectFlag?staticImageUrl+"hudong_icon_collect_sct.png":staticImageUrl+"hudong_icon_collect_nor.png"}}'></image>
+          
+        </view>
+        <view class='untily'>
+          <button open-type="share" class="share-btn">
+            <image src="{{staticImageUrl}}hudong_icon_share.png" class="bottom-icon"></image>
+          </button>
+
+        </view>
+      </view>
+      <view wx:if='{{inputFlag}}' style='display:flex'>
+      <view class='txtBack'>
+        <input class='replyTxt2' bindinput='commentInput' maxlength='500' focus='{{inputFlag}}' bindblur='inputBlur' placeholder='我来说点什么...' placeholder-class='placeholder'> </input>
+        </view>
+        <!-- <button class='submit' bindtap='submitComment'>发送</view> -->
+        <button class='submit' open-type='getUserInfo' bindgetuserinfo='submitComment' lang='zh_CN' wx:if='{{userInfoStatus==0}}'>发送</button>
+        <view class='submit' bindtap='submitComment' wx:if='{{userInfoStatus==1}}'>发送</view>
+      </view>
+    </view>
+    <view class='block'></view>
+</scroll-view>
+
+
+<view class="mask-pop" wx:if="{{deleteFlag}}" bindtap='cancelDelete'>
+    <view class="pop-box">
+      <view class="choose-box">
+        <!-- <view bindtap="toEditQuestion">编辑</view> -->
+        <view bindtap="deleteFun">删除</view>
+      </view>
+      <view class="cancel" bindtap="cancelDelete">取消</view>
+    </view>
+  </view>
+</view>
+<empty-page emptyPageObj="{{emptyPageObj}}" wx:if="{{!isShowDetail}}"></empty-page>
+<jdNav></jdNav>

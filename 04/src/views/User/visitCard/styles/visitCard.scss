@@ -1,0 +1,82 @@
+.visitCard {
+    box-sizing: border-box;
+    background: #fff;
+    height: 100%;
+    padding-top: 88px;
+    overflow: auto;
+    position: relative;
+    header {
+        box-shadow: 0px 6px 12px 0px rgba(153, 153, 153, 0.08);
+        border: 0;
+    }
+    div {
+        box-sizing: border-box;
+    }
+    .empty {
+        width: 350px;
+        height: 132px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -66px;
+        margin-left: -175px;
+        background: #fff;
+        .tit {
+            font-size: 28px;
+            color: #333;
+            text-align: center;
+        }
+        .empty_but {
+            width: 240px;
+            height: 72px;
+            background-image: linear-gradient(90deg, #ff9019 0%, #ff6419 100%), linear-gradient( #ff6419, #ff6419);
+            background-blend-mode: normal, normal;
+            border-radius: 36px;
+            margin: 0 auto;
+            line-height: 72px;
+            text-align: center;
+            color: #fff;
+            font-size: 32px;
+            margin-top: 32px;
+        }
+    }
+    .wrapper {
+        .box {
+            padding-left: 32px;
+            .item {
+                height: 136px;
+                line-height: 136px;
+                border-bottom: solid 1px #ebebeb;
+                img {
+                    vertical-align: middle;
+                    width: 88px;
+                    height: 88px;
+                    border-radius: 50%;
+                    margin-right: 32px;
+                }
+                .info {
+                    display: inline-block;
+                    vertical-align: middle;
+                    height: 88px;
+                    .name {
+                        font-size: 28px;
+                        color: #333;
+                        height: 44px;
+                        line-height: 44px;
+                        width: 150px;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        vertical-align: middle;
+                    }
+                    .tit {
+                        font-size: 24px;
+                        color: #666;
+                        height: 44px;
+                        line-height: 44px;
+                    }
+                }
+            }
+        }
+    }
+}

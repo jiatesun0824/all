@@ -1,0 +1,463 @@
+.content {
+    //background: #fff;
+    .bannerBox {
+        position: relative;
+        .swiper-pagination {
+            position: relative;
+            bottom: 100px;
+        }
+    }
+    .swiper-wrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        word-break: keep-all;
+        white-space: nowrap;
+        padding: 20px 0 30px;
+        background: #fff;
+        .swiper-box {
+            display: inline-block;
+            text-align: center;
+            //padding-bottom: 20px;
+            .banner-box {
+                width: 690px;
+                height: 310px;
+                margin: 0 auto;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0px 6px 33px 4px rgba(0, 0, 0, 0.05);
+                /*no*/
+                img {
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .item-section {
+        background-color: #fff;
+    }
+    .marquee-row {
+        margin: 0 30px;
+        background-color: #f5f5f5;
+        border-radius: 70px;
+        .marqueeBox {
+            height: 96px;
+            width: 100%;
+            overflow: hidden;
+            box-sizing: border-box;
+            .marquee_top {
+                transition: all 0.5s;
+                margin-top: -96px
+            }
+        }
+        .marquee-box {
+            padding: 10px 20px 10px 40px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            .marquee-icon {
+                width: 108px;
+                height: 72px;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .marquee-list {
+                display: flex;
+                margin-left: 35px;
+                align-items: center;
+                height: 96px;
+                line-height: 96px;
+                justify-content: space-between;
+                .marquee-content {
+                    margin-right: 25px;
+                    color: #333333;
+                    width: 70%;
+                    .marquee-top {
+                        display: flex;
+                    }
+                    .marquee-tips {
+                        width: 100%;
+                        font-family: PingFang-SC-Medium;
+                        font-size: 28px;
+                        line-height: 34px;
+                        padding-top: 10px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    .marquee-company {
+                        font-size: 24px;
+                        line-height: 32px;
+                        color: #999999;
+                        margin-left: 20px;
+                    }
+                    .deco {
+                        display: inline-block;
+                        height: 36px;
+                        line-height: 36px;
+                        text-align: center;
+                        color: #fff;
+                        background-image: linear-gradient(-90deg, #ff5548 0%, #ff975d 55%, #ffcd6d 100%), linear-gradient( #64b1ff, #64b1ff);
+                        background-blend-mode: normal, normal;
+                        box-shadow: 0px 4px 8px 0px rgba(255, 24, 0, 0.23);
+                        border-radius: 30px;
+                        font-size: 20px;
+                        padding: 0 10px;
+                        box-sizing: border-box;
+                    }
+                    .decoz {
+                        display: inline-block;
+                        height: 36px;
+                        line-height: 36px;
+                        text-align: center;
+                        color: #fff;
+                        background-image: linear-gradient(-90deg, #489eff 0%, #5db8ff 55%, #6dcdff 100%), linear-gradient( #64b1ff, #64b1ff);
+                        background-blend-mode: normal, normal;
+                        box-shadow: 0px 4px 8px 0px rgba(0, 78, 255, 0.23);
+                        border-radius: 30px;
+                        font-size: 20px;
+                        padding: 0 10px;
+                        box-sizing: border-box;
+                    }
+                }
+            }
+            .marquee-photo {
+                width: 132px;
+                height: 80px;
+                img {
+                    width: 100%;
+                    border-radius: 70px;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+    .serviceContent {
+        width: 690px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 6px 33px 4px rgba(0, 0, 0, 0.05);
+        .service-content {
+            border-radius: 10px;
+        }
+        .service-tab {
+            display: flex;
+            height: 80px;
+            font-family: PingFang-SC-Medium;
+            //border-radius:10px;
+            overflow: hidden;
+            position: relative;
+            .tab-item {
+                flex: 1;
+                height: 70px;
+                line-height: 70px;
+                text-align: center;
+                color: #333333;
+                font-size: 0;
+                //border-radius: 10px;
+                background-color: #f5f5f5;
+                //overflow: hidden;
+                padding-top: 10px;
+                span {
+                    font-size: 34px;
+                    position: relative;
+                    top: -5px;
+                }
+            }
+            em {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                margin-top: -40px;
+                display: inline-block;
+                width: 0;
+                height: 0;
+                border-color: #fff transparent;
+                border-width: 0 40px 80px 0;
+                border-style: solid;
+            }
+            .roatex {
+                transform: rotateX(-180deg);
+                border-color: #f5f5f5 transparent;
+            }
+            .active {
+                color: #ff6419;
+                background: #fff;
+                padding-top: 0;
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+                span {
+                    top: 3px;
+                }
+            }
+        }
+    }
+    .service-box {
+        padding: 20px 30px 40px 30px;
+        h1 {
+            font-size: 28px;
+            color: #999999;
+            border-left: 6px solid #ffbb33;
+            padding: 0 0 0 11px;
+            font-family: PingFang-SC-Medium;
+        }
+        .icon-list {
+            width: 100%;
+            display: flex;
+            justify-content: start;
+            flex-wrap: wrap;
+            .item-icon {
+                width: 33.3%;
+                padding: 50px 0 0 0;
+                .icon-img-box {
+                    width: 120px;
+                    height: 120px;
+                    margin: 0 auto;
+                    img {
+                        width: 100%;
+                    }
+                }
+                p {
+                    font-size: 24px;
+                    line-height: 32px;
+                }
+            }
+        }
+    }
+    .scroll-service-box {
+        padding: 40px 0 40px 0px;
+        margin-left: -10px;
+        h1 {
+            margin-left: 30px;
+        }
+        .icon-list {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            .item-icon {
+                width: 33.3%;
+                //flex: 1;
+            }
+        }
+    }
+}
+
+//抢单模块
+.robOrder {
+    margin-top: 16px;
+    .tcSession {
+        height: 120px;
+        display: flex;
+        line-height: 120px;
+        .tcItem {
+            text-align: center;
+            color: #333333;
+            font-size: 28px;
+            background: #fff;
+            flex: 1;
+            i {
+                display: inline-block;
+                width: 56px;
+                height: 56px;
+                vertical-align: middle;
+                &:active {}
+            }
+            .ic_need {
+                background: no-repeat center url("../images/icon-gongqiu@2x.png");
+                background-size: 100%;
+            }
+            .ic_shop {
+                background: no-repeat center url("../images/icon-shangdian@2x.png");
+                background-size: 100%;
+            }
+        }
+    }
+    .order-section {
+        background-color: #fff;
+        margin-top: 20px;
+        padding: 0 30px 30px 30px;
+        .title {
+            color: #333333;
+            font-size: 32px;
+            padding-top: 40px;
+            line-height: 32px;
+        }
+        ul {
+            display: flex;
+            justify-content: space-around;
+            li {
+                margin-top: 28px;
+                height: 214px;
+                width: 214px;
+                text-align: center;
+                background: no-repeat center url("../images/icon-background@.png");
+                background-size: 100%;
+                border-radius: 8px;
+                p:nth-of-type(1) {
+                    margin-top: 60px;
+                    color: #ff6419;
+                    font-size: 56px;
+                    font-weight: bold;
+                    line-height: 56px;
+                }
+                p:nth-of-type(2) {
+                    color: #333333;
+                    font-size: 24px;
+                    line-height: 24px;
+                    margin-top: 32px;
+                }
+            }
+        }
+    }
+    .robDecoration {
+        margin-top: 20px;
+        .title {
+            height: 80px;
+            background-color: #fbfbfb;
+            .title-bg {
+                width: 191px;
+                height: 55px;
+                background: no-repeat center url("../images/icon-rob-title.png");
+                background-size: 100%;
+                margin-left: 30px;
+                position: relative;
+                top: -2px;
+            }
+        }
+        ul {
+            padding: 0 30px;
+            li {
+                background-color: #fff;
+                margin: 0 auto 30px auto;
+                position: relative;
+                border-radius: 4px;
+                .rob-header {
+                    padding: 48px 30px;
+                    border-bottom: 1px solid #f7f7f7;
+                    .amount {
+                        color: #ff6419;
+                        font-size: 36px;
+                        font-weight: bold;
+                        line-height: 48px;
+                    }
+                    .address {
+                        color: #333333;
+                        font-weight: bold;
+                        font-size: 24px;
+                        line-height: 32px;
+                        margin-top: 18px;
+                        &:before {
+                            display: inline-block;
+                            content: '';
+                            width: 28px;
+                            height: 32px;
+                            background: no-repeat center url("../images/icon-dingwei.png");
+                            background-size: 100%;
+                            vertical-align: middle;
+                            margin-right: 5px;
+                        }
+                    }
+                }
+                .rob-bottom {
+                    padding: 30px;
+                    p {
+                        color: #666666;
+                        font-size: 24px;
+                        line-height: 48px;
+                    }
+                    .pay {
+                        position: relative;
+                        em {
+                            position: absolute;
+                            right: 56px;
+                            color: #333333;
+                            font-style: normal;
+                            &:before {
+                                display: inline-block;
+                                content: '';
+                                width: 28px;
+                                height: 32px;
+                                background: no-repeat center url("../images/icon-name@2x.png");
+                                background-size: 100%;
+                                vertical-align: middle;
+                                margin-right: 5px;
+                            }
+                        }
+                    }
+                }
+                .ic_rob {
+                    position: absolute;
+                    right: 30px;
+                    top: -10px;
+                    width: 118px;
+                    height: 161px;
+                    background: no-repeat center url("../images/icon-qiang@2x.png");
+                    background-size: 100%;
+                }
+                .dc_rob {
+                    position: absolute;
+                    right: 30px;
+                    top: 58px;
+                    text-align: center;
+                    line-height: 64px;
+                    width: 196px;
+                    height: 64px;
+                    background-color: #ffffff;
+                    border-radius: 32px;
+                    border: solid 2px #ff6419;
+                    font-size: 24px;
+                    color: #ff6419;
+                }
+                .ic_no_rob {
+                    position: absolute;
+                    right: 30px;
+                    top: -10px;
+                    width: 161px;
+                    height: 163px;
+                    background: no-repeat center url("../images/yiqiangwan@2x.png");
+                    background-size: 100%;
+                }
+            }
+            .look-section {
+                height: 112px;
+                margin-top: 20px;
+                .lookmore {
+                    margin: 0 auto;
+                    background-color: #fff9f6;
+                    border-radius: 4px;
+                    height: 72px;
+                    text-align: center;
+                    line-height: 72px;
+                    span {
+                        color: #ff6419;
+                        font-size: 24px;
+                        &:after {
+                            display: inline-block;
+                            content: '';
+                            width: 24px;
+                            height: 24px;
+                            background: no-repeat center url("../images/ic_swiper_down.png");
+                            background-size: 100%;
+                            vertical-align: middle;
+                            margin-left: 10px;
+                            transition: all 0.5s;
+                        }
+                    }
+                    .active {
+                        &:after {
+                            position: relative;
+                            top: -2px;
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,285 @@
+.content {
+  background: #FCFCFC;
+  padding-bottom: 30px;
+  .bannerBox{
+    position: relative;
+    .swiper-pagination{
+      position: relative;
+      bottom: 100px;
+    }
+  }
+    .swiper-wrapper {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        word-break: keep-all;
+        white-space: nowrap;
+        margin: 20px 0 30px;
+        background: #fff;
+        .swiper-box {
+            display: inline-block;
+            text-align: center;
+            padding-bottom: 20px;
+            .banner-box {
+                width: 690px;
+                height: 310px;
+                margin: 0 auto;
+                border-radius: 10px;
+                overflow: hidden;
+              box-shadow: 0px 6px 33px 4px
+              rgba(0, 0, 0, 0.05);
+                /*no*/
+              img{
+                height: 100%;
+              }
+            }
+        }
+    }
+    .marquee-row {
+        margin: 0px 30px 60px;
+        background-color: #f5f5f5;
+        border-radius: 70px;
+        .marqueeBox{
+            height: 96px;
+            width: 100%;
+            overflow: hidden;
+            box-sizing: border-box;
+          .marquee_top {
+            transition: all 0.5s;
+            margin-top: -96px
+          }
+        }
+        .marquee-box {
+            padding: 10px 20px 10px 40px;
+            display: flex;
+            align-items: center;
+            position: relative;
+             overflow: hidden;
+            .marquee-icon {
+                width: 108px;
+                height: 72px;
+                img {
+                  width: 100%;
+                  height: 100%;
+                }
+            }
+            .marquee-list {
+                display: flex;
+                margin-left: 35px;
+                align-items: center;
+                height: 96px;
+                line-height: 96px;
+                justify-content: space-between;
+                .marquee-content {
+                    margin-right: 25px;
+                    color: #333333;
+                    width: 70%;
+                    .marquee-top{
+                      display: flex;
+                    }
+                    .marquee-tips {
+                        width: 100%;
+                        font-family: PingFang-SC-Medium;
+                        font-size: 28px;
+                        line-height: 34px;
+                        padding-top: 10px;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                    .marquee-company {
+                        font-size: 24px;
+                        line-height: 32px;
+                        color: #999999;
+                        margin-left: 20px;
+                    }
+                    .deco {
+                        display: inline-block;
+                        height: 36px;
+                        line-height: 36px;
+                        text-align: center;
+                        color: #fff;
+                        background-image: linear-gradient(-90deg,
+                          #ff5548 0%,
+                          #ff975d 55%,
+                          #ffcd6d 100%),
+                        linear-gradient(
+                            #64b1ff,
+                            #64b1ff);
+                        background-blend-mode: normal,
+                        normal;
+                        box-shadow: 0px 4px 8px 0px
+                        rgba(255, 24, 0, 0.23);
+                        border-radius: 30px;
+                        font-size: 20px;
+                        padding: 0 10px;
+                        box-sizing: border-box;
+                    }
+                  .decoz{
+                    display: inline-block;
+                    height: 36px;
+                    line-height: 36px;
+                    text-align: center;
+                    color: #fff;
+                    background-image: linear-gradient(-90deg,
+                      #489eff 0%,
+                      #5db8ff 55%,
+                      #6dcdff 100%),
+                    linear-gradient(
+                        #64b1ff,
+                        #64b1ff);
+                    background-blend-mode: normal,
+                    normal;
+                    box-shadow: 0px 4px 8px 0px
+                    rgba(0, 78, 255, 0.23);
+                    border-radius: 30px;
+                    font-size: 20px;
+                    padding: 0 10px;
+                    box-sizing: border-box;
+                  }
+                }
+            }
+            .marquee-photo {
+                width: 132px;
+                height: 80px;
+                img {
+                    width: 100%;
+                    border-radius: 70px;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+  .serviceContent{
+    width: 690px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 6px 33px 4px
+    rgba(0, 0, 0, 0.05);
+    .service-content{
+       border-radius: 10px;
+    }
+    .service-tab{
+       display: flex;
+       height: 80px;
+       font-family: PingFang-SC-Medium;
+       //border-radius:10px;
+       overflow: hidden;
+       position: relative;
+      .tab-item{
+        flex: 1;
+        height: 70px;
+        line-height: 70px;
+        text-align: center;
+        color: #333333;
+        font-size: 0;
+        //border-radius: 10px;
+        background-color: #f5f5f5;
+        //overflow: hidden;
+        padding-top: 10px;
+        span{
+          font-size: 34px;
+          position: relative;
+          top: -5px;
+        }
+      }
+      em{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-top: -40px;
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-color: #fff transparent;
+        border-width: 0 40px 80px 0;
+        border-style: solid;
+      }
+      .roatex{
+        transform: rotateX(-180deg);
+        border-color: #f5f5f5 transparent;
+      }
+      .active{
+        color: #ff6419;
+        background: #fff;
+        padding-top: 0;
+        box-shadow: 0 0 0 0
+        rgba(0, 0, 0, 0);
+          span{
+           top: 3px;
+        }
+      }
+    }
+    //.bgactive{
+    //   background: no-repeat center url("../images/home_bg_tab1.png");
+    //   background-size: 100%;
+    //  z-index: 112;
+    //}
+  }
+    .service-box {
+        padding: 20px 30px 40px 30px;
+        h1 {
+            font-size: 28px;
+            color: #999999;
+            border-left: 6px solid #ffbb33;
+            padding: 0 0 0 11px;
+            font-family: PingFang-SC-Medium;
+        }
+        .icon-list {
+            width: 100%;
+            display: flex;
+            justify-content: start;
+            flex-wrap: wrap;
+            .item-icon {
+                width: 33.3%;
+                padding: 50px 0 0 0;
+                .icon-img-box {
+                    width: 120px;
+                    height: 120px;
+                    margin: 0 auto;
+                    img {
+                        width: 100%;
+                    }
+                }
+                p {
+                    font-size: 24px;
+                    line-height: 32px;
+                }
+            }
+        }
+    }
+    .scroll-service-box {
+        padding: 40px 0 40px 0px;
+        margin-left: -10px;
+        h1 {
+            margin-left: 30px;
+        }
+        .icon-list {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+          .item-icon{
+            width: 33.3%;
+            //flex: 1;
+          }
+            //.item-icon:first-child {
+            //    padding: 15px 15px 0 60px;
+            //}
+            //.item-icon:last-child {
+            //    padding: 15px 0 0 15px;
+            //}
+        }
+    }
+}
+
+@media screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) {
+    .scroll-service-box {
+        .icon-list {
+            //width: 150% !important;
+        }
+    }
+}

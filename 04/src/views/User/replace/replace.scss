@@ -1,0 +1,143 @@
+.replace {
+    height: 100%;
+    overflow: auto;
+    background: #f5f5f5;
+    position: relative;
+    padding-top: 88px;
+    .wrapper {
+        .box {
+            padding-bottom: 30px;
+            .slider {
+                margin: 30px 0;
+                background: #fff;
+                .head {
+                    height: 88px;
+                    line-height: 88px;
+                    padding: 0 20px;
+                    border-bottom: solid 1px #f8f8f8;
+                    .title {
+                        float: left;
+                        font-size: 32px;
+                        color: #333;
+                    }
+                    .datetit {
+                        float: right;
+                        font-size: 24px;
+                        color: #999;
+                    }
+                }
+                .main {
+                    display: flex;
+                    position: relative;
+                    padding: 20px;
+                    border-bottom: solid 1px #f8f8f8;
+                    overflow: hidden;
+                    .imgleft {
+                        width: 200px;
+                        height: 170px;
+                        margin-right: 20px;
+                        vertical-align: middle;
+                    }
+                    .divright {
+                        display: inline-block;
+                        vertical-align: middle;
+                        height: 170px;
+                        .name {
+                            margin-bottom: 10px;
+                            .name-tit {
+                                background: #ff6419;
+                                color: #fff;
+                                font-size: 24px;
+                                width: 120px;
+                                text-align: center;
+                                height: 32px;
+                                line-height: 32px;
+                                vertical-align: middle;
+                                display: inline-block;
+                            }
+                            .namevalue {
+                                font-size: 32px;
+                                color: #333;
+                                vertical-align: middle;
+                            }
+                        }
+                        .status {
+                            font-size: 24px;
+                            color: #333;
+                        }
+                        .why {
+                            margin-top: 10px;
+                            color: #999;
+                            font-size: 24px;
+                            line-height: 30px;
+                            text-align: justify;
+                            width: 85%;
+                            height: 90px;
+                            overflow: hidden;
+                        }
+                    }
+                    .delete {
+                        background-image: url("../images/search_icon_delete.png");
+                        background-repeat: no-repeat;
+                        background-size: 30px 30px;
+                        background-position: center;
+                        position: absolute;
+                        right: 30px;
+                        top: 140px;
+                        width: 75px;
+                        height: 75px;
+                    }
+                }
+                .but {
+                    height: 88px;
+                    line-height: 88px;
+                    padding: 0 20px;
+                    .but-tit {
+                        font-size: 32px;
+                        color: #333;
+                        float: left;
+                    }
+                    .icon-right {
+                        float: right;
+                        width: 88px;
+                        height: 88px;
+                        background: no-repeat center url("../images/porfile_icon_open.png");
+                        background-size: 30%;
+                    }
+                }
+            }
+        }
+    }
+    .noList {
+        padding-top: 335px;
+        .imgbox {
+            text-align: center;
+            img {
+                width: 171px;
+                height: 151px;
+            }
+        }
+        .tit {
+            margin-top: 49px;
+            margin-bottom: 219px;
+            text-align: center;
+            font-size: 24px;
+            line-height: 48px;
+            color: #999;
+        }
+        .but {
+            text-align: center;
+            .butSp {
+                width: 220px;
+                height: 80px;
+                background-color: #f5f5f5;
+                border-radius: 40px;
+                border: solid 2px #ff6419;
+                font-size: 32px;
+                color: #ff6419;
+                display: inline-block;
+                line-height: 80px;
+            }
+        }
+    }
+}

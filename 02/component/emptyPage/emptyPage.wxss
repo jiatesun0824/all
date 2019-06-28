@@ -1,0 +1,35 @@
+.empty-page{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  overflow: hidden;
+  text-align: center
+}
+.empty-page image{
+  width: 670rpx;
+  height: 314rpx;
+  margin-top: 298rpx;
+}
+.text{
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 30rpx;
+  text-align: center;
+  display: inline-block;
+  width: 100%
+}
+.btn{
+  display: inline-block;
+  padding: 0 69rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  margin-top: 40rpx;
+  background-color: #29cccc;
+	border-radius: 32rpx;
+  font-size: 28rpx;
+  color: #ffffff;
+}

@@ -1,0 +1,100 @@
+.search-view{
+    background-color: #fff;
+    .search-box{
+        padding: 15px 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .search-icon{
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-size: 100%;
+            vertical-align: text-top;
+            background-image: url('./images/home_icon_search.png');
+            position: absolute;
+            left: 60px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #search-form{
+            width: 90%;
+            .search-text{
+                background-color: rgb(244,244,244);
+                border-radius: 28px;
+                padding: 16px 0 16px 60px;
+                width: 85%;
+                border: 0;
+            }
+        }
+        
+        ::-webkit-input-placeholder {
+            color: #999999;
+        }
+        .cancle{
+            font-size: 28px;
+            color: rgb(255,100,25);
+            text-decoration: none;
+        }
+        .divider-bottom{
+            bottom: -15px;
+            background-color: #e8e8e8;
+        }
+    }
+    .search-hot{
+        padding: 40px 30px 34px;
+        .search-title{
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: rgb(153,153,153);
+            .active{
+                color: rgb(255,100,25);
+            }
+            div:first-child{
+                margin-right: 31px;
+            }
+            div:first-child:after{
+                content: '';
+                height: 26px;
+                width: 5px;
+                -webkit-transform:scaleX(.4);
+                transform:scaleX(.4);
+                background-color: #e8e8e8;
+                display: inline-block;
+                margin-left: 31px;
+            }
+            
+        }
+        .search-item{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap-reverse;
+            span {
+                height: 26px;
+                line-height: 26px;
+                color: rgb(51,51,51);
+                font-size: 26px;
+                margin: 0 20px 20px 0;
+                padding: 17px 26px;
+                border-radius: 6px;
+                background-color: rgb(245,245,245);
+            }
+        }
+    }
+    .search-history{
+        padding-top: 0;
+        // :first-child:after{
+        //     visibility: hidden;
+        // }
+        i{
+            background-image: url('./images/search_icon_delete.png');
+            background-size: 100%;
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            right: 30px;
+        }
+    }
+}

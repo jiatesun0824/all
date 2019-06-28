@@ -1,0 +1,29 @@
+<!--pages/publishDesgin/publishDesgin.wxml-->
+<view class='border'>
+  <textarea placeholder='描述一下你的想法，设计师会懂你' value='{{content}}' class='txt' maxlength='100' bindinput='textInput'></textarea>
+</view>
+<view class='houseOrPlan'>
+  <view wx:if='{{planId}}' class='plan'>
+    <image class='planImg' src='{{resourcePath+planImg}}' style='height:315rpx'></image>
+    <view class='planInfo'>
+      <view class='planName'>{{planName}}</view>
+      <view class='time'>{{planTime}}</view>
+    </view>
+    <image class='planDel' src='{{staticImageUrl}}pic_icon_delete2.png' bindtap='delPlan'></image>
+  </view>
+  <view>
+    <view wx:if='{{houseId}}' class='plan'>
+    <image class='planImg' src='{{resourcePath+houseImg}}' style='height:420rpx'></image>
+    <view class='planInfo'>
+      <view class='planName'>{{houseTitle}}</view>
+      <view class='time'>{{houseTime}}</view>
+    </view>
+    <image class='planDel' src='{{staticImageUrl}}pic_icon_delete2.png' bindtap='delHouse'></image>
+  </view>
+  </view>
+</view>
+<view class='add' bindtap='add' wx:if='{{planId=="" && houseId==""}}'>
+  <view class='plus'>+</view>
+  <view class='text'>{{planFlag?'添加方案':'添加户型'}}</view>
+</view>
+<view class='submit' bindtap='submit'>发布</view>

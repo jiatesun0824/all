@@ -1,0 +1,50 @@
+
+
+Mac的使用用户： Steve
+
+appID： sz3dimensionalword@126.com
+密码：Sz3DAppStore1234  
+
+
+A.) iOS项目存放路径：
+1.文件目录进入方式)
+   -> 桌面左上角菜单的“前往” 下面的个人文件夹。
+   -> 进入release目录再进入sandcloudhomecommon文件。
+2.命令行方式进入)
+   -> 打开终端 cd ~/release/sandcloudhomecommon。
+
+B.) web打包后资源传输到Mac上。
+1.替换sandcloudhomecommon目录下www的static文件夹。
+2.修改打包后目录下的index.html，里面从icon后的一个标签后替换。
+替换内容：<link rel=stylesheet href=static/css/zy.media.min.css><script src=static/js/zy.media.min.js></script><script src=static/js/jquery.min.js></script><script src=loadingoverlay.min.js></script><script src=cordova.js></script><script src=chcp.js></script><script src=update.js></script>
+
+C.) 构建新包时间戳
+1.在sandcloudhomecommon命令行执行cordova-hcp build生成新包资源时间戳。
+
+D.) 构建新包命令
+1.在sandcloudhomecommon命令行执行cordova build。
+
+E.) 真机安装iOS包
+1.进入sandcloudhomecommon/platforms/ios/三度云享家通用版.xcodeproj。
+2.右键使用xcode打开包。
+3.连接手机。
+4.在xcode左上角上选择generic iOS Device，切换真机iPhone。
+5.在xcode左边菜单栏点击项目：三度云享家通用版。
+6.在中间位置显示安装包的配置，在general里面需要切换signing勾选，并选择team为three Degree Space...。
+7.最后点击左上角的三角形icon，安装app到手机。
+
+F.) app上传appStore审核。
+1.在xcode左上角上选择generic iOS Device，切换为generic iOS Device。
+2.填写version和build的版本号和构建号。
+3.在xcode中间部分配置项，取消signing上的勾选。
+4.并在signing（Debug）和signing(Release)选择...release证书。
+5.在xcode顶部菜单栏选择Product -> Archive。
+6.在弹出框的右边validate校验一下包，选一下证书，next。
+7.最后upload到AppStore上。
+
+G.) 在AppStore新建app对应版本更新
+1.选iOS包然后输入上传版本。
+2.填写必要信息。
+3.选择上传的app。
+4.提交审核。
+

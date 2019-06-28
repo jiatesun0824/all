@@ -1,0 +1,72 @@
+目录
+ci: 为CI打包目录
+online: 为线上产品打包目录
+
+每次更新URL就需要更新app的壳。
+
+
+
+当前 集成测试(CI) 使用的下载url为：
+android:    	http://mobile2b.ci.sanduspace.cn/hotupdate/android
+ios:           	http://mobile2b.ci.sanduspace.cn/hotupdate/android
+
+后面规划新的域名后:
+CI 使用的下载url为：
+android:    	http://m.ci.sanduspace. com/hotupdate/android
+ios:            http://m.ci.sanduspace.com/hotupdate/ios          ---要不要修改为https// ?待定
+
+正式环境使用的下载url为：
+android:    	http://m.sanduspace.com/hotupdate/android
+ios:            http://m.sanduspace.com/hotupdate/ios             ---要不要修改为https// ?待定
+
+
+
+1、打包
+
+CI打包在ci 目录下，线上打包到online目录下，因为只是打壳，不用管www里面的代码是不是最新的，直接打包即可。
+
+cordova build --release android     //生成没有签名的apk
+
+//CI签名
+jarsigner -verbose -keystore C:\cordova\mobile.keystore  -signedjar C:\cordova\sanduspace_mobile_ci_1.0.4_hot.apk  C:\cordova\android-release-ci-unsigned.apk mobile.keystore --storepass sanduspace
+
+//online 签名
+jarsigner -verbose -keystore C:\cordova\mobile.keystore  -signedjar C:\cordova\online\apk\release_mobile_online_hot.apk   C:/cordova/online/platforms/android/build/outputs/apk/android-release-unsigned.apk mobile.keystore --storepass sanduspace
+
+
+
+2、部署热更新代码 frist\目录下。
+
+部署热更新代码仍然使用原来的frist目录： 
+
+第一步：使用原来打包apk的jenkins。修改svn分支，运行项目，运行成功打出apk包。
+
+第二步：到 frist\website 下：-----这一步如果通过jenkins部署web前台，可以不做。
+    删除 frist\website\下所有文件
+    复制frist\www 下的所有文件到frist\website 下。
+
+第三步：手动修改www目录下的index.html。增加3个js的引入：如下图
+
+
+<script src=loadingoverlay.min.js></script>          
+<script src=cordova.js></script>
+<script src=chcp.js></script>
+<script src=update.js></script>
+
+
+
+
+第四步：生成热更新文件
+
+运行    cordova-hcp build             即可在www目录下生成 chcp.json和chcp.manifest。
+
+第五步：这步可以在windows下执行frist\hotupdate.bat 即可
+     将frist\hotupdate目录复制到frist\website\hotupdate。
+     再将www目录下面的全部文件，复制到frist\website\hotupdate\ android和 ios目录里面，各复制一份。
+     修改website文件里面在hotupdate\ios\chcp.json文件，将URL改成ios。
+
+ 
+
+第六步：windows下到frist\website目录下，hotupdate目录压缩，再部署到web服务器上。
+
+

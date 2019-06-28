@@ -1,0 +1,76 @@
+<view class='publishTab'>
+  <view class='publishTab-item {{itemType==1?"active":""}}' data-blockType='askAndAnswer' data-type='1' bindtap='changeItem'>问答</view>
+  <view class='publishTab-item {{itemType==2?"active":""}}' data-blockType='topic' data-type='2' bindtap='changeItem'>话题讨论</view>
+  <view class='publishTab-item {{itemType==3?"active":""}}' data-blockType='share' data-type='3' bindtap='changeItem'>大咖分享</view>
+  <view class='publishTab-item {{itemType==4?"active":""}}' data-blockType='designReform' data-type='4' bindtap='changeItem'>设计改造</view>
+</view>
+<view class='list'>
+  <view class='ask' wx:if='{{itemType==1}}'>
+    <view class='item' wx:for='{{showList}}' bindtap='navigate' data-type='question' data-id='{{item.id}}' data-count="{{item.reviewsCount}}">
+      <view class='txt'>
+        <view class='title'>{{item.title}}</view>
+        <view class='time'>{{item.gmtCreate}}</view>
+      </view>
+      <image wx:if='{{item.coverPicPath}}' src='{{resourcePath+item.coverPicPath}}'></image>
+    </view>
+  </view>
+  <view class='topic' wx:if='{{itemType==2}}'>
+    <view class='item' wx:for='{{showList}}' bindtap='navigate' data-type='topic' data-id='{{item.id}}'>
+      <view class='title'>#{{item.title}}#</view>
+      <view class='content'>{{item.content}}</view>
+      <view class='time'>{{item.gmtCreate}}</view>
+    </view>
+  </view>
+  <view class='share' wx:if='{{itemType==3}}'>
+    <view class='ace' wx:for='{{showList}}' wx:key="{{index}}">
+      <!-- 案例 -->
+      <view class='plan' bindtap='navigate' data-type='plan' wx:if='{{item.shareType==1}}' data-id='{{item.id}}'>
+        <image class='topImg' src='{{resourcePath+item.coverPicPath}}'></image>
+        <view class='infoArea'>
+          <view class='title'>{{item.title}}</view>
+          <view class='planInfo'>{{item.houseStyleName}} · {{item.houseStyle}} · {{item.houseArea}}m²</view>
+          <!-- <view class='postInfo'>
+            <view class='author'>
+              <image class='headPic' src='{{staticImageUrl}}/index.png'></image>
+              <view class='name'>{{item.publishUserName}}</view>
+            </view>
+            <view class='popular'>
+              {{item.viewCount+item.viewVirtualCount}}查看 · {{item.reviewsCount}}评论
+            </view>
+          </view> -->
+        </view>
+        <view class='tag'>案例</view>
+      </view>
+      <!-- 博文 -->
+      <!--图片、头像-->
+      <view class='article' bindtap='navigate' data-type='post' wx:if='{{item.shareType==0}}' data-id='{{item.id}}'>
+        <image class='topImg' src='{{resourcePath+item.coverPicPath}}'></image>
+        <view class='infoArea'>
+          <view class='title'>{{item.title}}</view>
+        </view>
+        <view class='tag'>博文</view>
+      </view>
+
+    </view>
+  </view>
+  <view class='designA' wx:if='{{itemType==4}}'>
+    <view class='design' bindtap='navigate' data-type='design' wx:for='{{showList}}' data-id='{{item.id}}'>
+      <view class='title'>{{item.content}}</view>
+      <view class='designImg'>
+        <image class='desImg' src='{{resourcePath+item.coverPicPath}}'></image>
+      </view>
+      <!-- <view class='infoArea'>
+        <view class='postInfo'>
+          <view class='author'>
+            <image class='headPic' src='{{staticImageUrl}}/index.png'></image>
+            <view class='name'>{{item.publishUserName}}</view>
+          </view>
+          <view class='popular'>
+            {{item.reviewsCount || 0}}评论
+          </view>
+        </view>
+      </view> -->
+    </view>
+  </view>
+  <empty-page emptyPageObj="{{emptyPageObj}}" wx:if="{{showList.length==0}}"></empty-page>
+</view>

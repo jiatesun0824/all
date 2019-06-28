@@ -1,0 +1,33 @@
+<!--pages/plan/selection-house-type/selection-house-type.wxml-->
+<!--根据type值返回描述文字和链接  -->
+<view class='selection-house-type'>
+  <!-- 户型列表 -->
+    <view class="list" wx:if="{{useList.length>0}}">
+      <view wx:for="{{useList}}" bindtap='switchCheck' data-type='myHouse' data-index='{{index}}'>
+        <view class="list-item"  wx:key='{{index}}' data-key='{{index}}'>
+          <view>
+          <image class='checkBtn' src='{{staticImageUrl+(isCheck==index?"choose_icon_sct.png":"choose_icon_nor_01.png")}}' data-type='myHouse' catchtap='switchCheck' data-index="{{index}}"></image>
+          </view>
+          <view  class='house'>
+          <view class="item-img">
+            <!-- <image class='checkBtn' src='{{staticImageUrl+(isCheck==index?"choose_icon_sct.png":"choose_icon_nor.png")}}' data-type='myHouse' catchtap='switchCheck' data-index="{{index}}"></image> -->
+            <image data-index="{{index}}" src="{{item.thumbnailPath? resourcePath + item.thumbnailPath : staticImageUrl+'design_def.png'}}"></image>
+          </view>
+          <view class="bottom-box">
+            <view class="left">
+              <view class="name ellipsis fl">{{item.houseCommonCode}}</view>
+              <view class="date ellipsis fr">{{item.gmtModified}}</view>
+            </view>
+          </view>
+          </view>
+        </view>
+        <view class='grayLine'></view>
+      </view>
+    </view>
+
+  <!-- 确定按钮 -->
+  <view class='confirm' wx:if="{{useList.length>0}}">                                  
+    <button class='confirmBtn' bindtap='confirmBtn'>{{navaPage=='comment'?'确定':'下一步'}}</button>
+  </view>
+</view>
+<empty-page emptyPageObj="{{emptyPageObj}}" btnHiden="{{true}}" wx:if="{{!useList.length>0}}"></empty-page>

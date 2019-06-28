@@ -1,0 +1,9 @@
+const GET_ALL_AREA_DATA = 'GET_TEST_DATA'
+const SET_USER_INFO = 'SET_USER_INFO'
+const SET_TOKEN = 'SET_TOKEN'
+
+export {
+    GET_ALL_AREA_DATA,
+    SET_USER_INFO,
+    SET_TOKEN
+}

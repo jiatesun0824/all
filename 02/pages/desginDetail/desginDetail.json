@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "empty-page": "/component/emptyPage/emptyPage",
+    "jdNav": "/component/jdNav/jdNav"
+  },
+  "navigationBarTitleText": "设计改造"
+}

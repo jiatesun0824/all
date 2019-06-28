@@ -1,0 +1,56 @@
+.addbankphone {
+    height: 100%;
+    background: #eee;
+    padding-top: 88px;
+    .tit {
+        height: 88px;
+        line-height: 108px;
+        padding-left: 30px;
+        background: #fafafa;
+        font-size: 24px;
+        font-family: PingFang-SC-Bold;
+        color: #999;
+    }
+    .box {
+        height: 88px;
+        line-height: 88px;
+        padding-left: 30px;
+        background: #fff;
+        font-size: 28px;
+        font-family: PingFang-SC-Bold;
+        box-sizing: border-box;
+        overflow: hidden;
+        .inpu {
+            width: 400px;
+            height: 88px;
+            color: #333;
+            border: none;
+            float: left;
+        }
+        .getcode {
+            display: inline-block;
+            float: right;
+            width: 250px;
+            color: #fff;
+            // border-left: solid 1px #e8e8e8;
+            text-align: center;
+            height: 88px;
+            line-height: 88px;
+            background-color: #ffa540;
+        }
+    }
+    .nextbox {
+        text-align: center;
+        margin-top: 96px;
+        .next {
+            display: inline-block;
+            width: 600px;
+            line-height: 80px;
+            height: 80px;
+            background-color: #ff6419;
+            font-size: 32px;
+            color: #fff;
+            border-radius: 40px;
+        }
+    }
+}

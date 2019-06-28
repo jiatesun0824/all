@@ -1,0 +1,6 @@
+<view class="empty-page">
+  <image src="{{emptyPageObj.imgUrl}}"></image>
+  <!-- <view class="text"  bindtap='goPage'>{{emptyPageObj.title}}</view> -->
+  <text class="text" bindtap='goPage'>{{emptyPageObj.title}}</text>
+  <view class="btn" wx:if="{{emptyPageObj.btnText&&!btnHiden}}" bindtap='goPage'>{{emptyPageObj.btnText}}</view>
+</view>

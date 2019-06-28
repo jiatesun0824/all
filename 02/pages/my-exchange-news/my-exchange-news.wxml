@@ -1,0 +1,30 @@
+<!--pages/my-exchange-news/my-exchange-news.wxml-->
+<view class='item' wx:for='{{messageList}}' wx:key='{{index}}'>
+  <view class='{{item.coverPicPath?"item-grow":"itemWidth"}}' bindtap='toDetail' data-item='{{item}}'>
+    <view style='display:flex;position:relative'>
+      <image class='headImg' src="{{item.headPic?item.headPic:staticImageUrl+'index.png'}}">
+      </image>
+      <icon class='isRead' wx:if="{{item.isRead==0}}"></icon>
+      <view style='flex-grow:1;width:400rpx'>
+        <view style='display:flex'>
+          <text class='name'>{{item.nickName}}</text>
+          <text class='action'>{{messageTypeString[item.businessType]}}你的{{messageBlockType[item.blockType]}}</text>
+        </view>
+        <view class='date'>{{item.gmtCreate}}</view>
+      </view>
+    </view>
+    <!-- <view class='item-content' wx:if='{{item.businessType == 0 || (item.blockType == 1 &&item.operateType==0)}}'>{{item.content}}</view>
+    <view class='item-content' wx:if='{{item.operateType == 1 && item.blockType == 4 }}'>{{item.content}}</view>
+    <view class='item-comment' wx:if="{{item.operateType == 1 && (item.businessType == 1 || item.blockType == 4)}}">{{item.myReplyContent}} </view>
+  </view> -->
+    <view class='item-content' wx:if='{{item.businessType == 0 && item.operateType==0}}'>{{item.blockType==1?item.title:item.content}}</view>
+    <view class='item-content' wx:if='{{item.businessType == 1 && item.operateType==1}}'>{{item.content}}</view>
+
+    <view class='item-content' wx:if="{{item.businessType == 2}}">{{item.blockType==1?item.title:item.content}} </view>
+    <view class='item-comment' wx:if="{{item.businessType == 2}}">{{item.myReplyContent}} </view>
+  </view>
+  <view style='padding-left:20rpx;' wx:if="{{item.coverPicPath}}">
+    <image class='item-image' src="{{item.coverPicPath?resourcePath+item.coverPicPath:''}}"></image>
+  </view>
+</view>
+<empty-page emptyPageObj="{{emptyPageObj}}" wx:if="{{messageList.length==0}}"></empty-page>

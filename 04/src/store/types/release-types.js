@@ -1,0 +1,5 @@
+const GET_SUPPLYLIST = 'GET_SUPPLYLIST'
+
+export {
+  GET_SUPPLYLIST
+}

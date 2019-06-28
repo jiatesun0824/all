@@ -1,0 +1,139 @@
+<view class="interlocution-wrap" wx:if="{{obj}}">
+<scroll-view scroll-into-view='{{scrollId}}' scroll-y style='height:{{widowHeight}}px;' bindscrolltolower='onBottom'>
+  <view>
+    <view class="question-box">
+      <view class="question-user">
+        <view class="user-box">
+          <view class="user-msg">
+            <view class="user-photo-box">
+              <image src="{{obj.authorPic}}" wx:if="{{obj.authorPic}}" class="user-photo"></image>
+              <image src="{{staticImageUrl}}index.png" wx:else class="user-photo"></image>
+            </view>
+            <view class="user">
+              <view class="user-name">{{obj.creator}}</view>
+              <view class="release-time">{{obj.publishTime}}</view>
+            </view>
+          </view>
+          <image src="{{staticImageUrl}}hudong_icon_more_01.png" class="opt-btn" wx:if="{{obj.createUserId == userId }}" bindtap="editQestionClik" mode="aspectFit"></image>
+        </view>
+      </view>
+      <text class="question-title">{{obj.title}}</text>
+
+      <view class="user-image-box" wx:for="{{obj.pics}}" wx:key="{{index}}">
+        <image src="{{resourcePath+item.url}}" data-index="{{index}}" data-item="{{obj.pics}}" mode="widthFix"></image>
+      </view>
+    </view>
+    <view class="answer-list" id="myNewReply" style="padding-bottom:{{height+30}}px">
+      <view class="answer-top" id='comment'>
+        回答 {{answerCount}}
+      </view>
+      <view wx:if="{{answerCount!=0}}">
+        <view class="answer-user" wx:for="{{replyList}}" wx:key="{{index}}">
+          <!-- 最佳回答 -->
+          <view class="user-box">
+            <view class="user-msg">
+              <view class="user-photo-box">
+                <image src="{{item.authorPic}}" class="user-photo" wx:if="{{item.authorPic}}"></image>
+                <image src="{{staticImageUrl}}index.png" class="user-photo" wx:else></image>
+                <!-- <view class="goShop">
+                进入店铺
+              </view> -->
+              </view>
+              <view class="answer-content">
+                <view class="answer-content-top">
+                  <view class="user">
+                    <view class="answer-user-name">
+                      <view class="usernick">{{item.creator?item.creator:'匿名用户'}}</view>
+                      <!-- <text class="type">装修公司</text> -->
+                      <view class="bestAnswer" wx:if="{{item.isBestAnswer}}">最佳回答</view>
+                    </view>
+                    <view class="release-time">{{item.gmtCreate}}</view>
+
+                  </view>
+                  <view class="like-wrap">
+                    <view class="like-box {{item.likeFlag?'actice':'no-active'}}">{{item.likeCount+item.likeVirtualCount }}
+                    </view>
+                    <image src="{{staticImageUrl}}{{item.likeFlag?'hudong_icon_zan_sct.png':'hudong_icon_zan_nor.png'}}" class="like" data-index="{{index}}" data-id="{{item.id}}" mode="aspectFit" bindtap="getZoneStatus"></image>
+                    <image src="{{staticImageUrl}}hudong_icon_more_01.png" mode="aspectFit" class="opt-btn" data-id="{{item.id}}" data-replyid="{{item.replyUserId}}" data-isBestAnswer="{{item.isBestAnswer}}" bindtap="settingClik" wx:if="{{obj.createUserId == userId ||item.replyUserId == userId}}"></image>
+                  </view>
+                </view>
+                <view class="answer-msg">
+                  <text style="display:block;padding-right:30rpx;">{{item.content}}</text>
+                  <view wx:if="{{item.pics.length != 0}}" class="picimg-wrap">
+                    <view wx:for="{{item.pics}}" wx:key="{{index}}" wx:for-item="items" class="picimg-box">
+                      <image src="{{resourcePath+items.url}}" wx:if="{{index<3}}" class="replyImg" data-index="{{index}}" data-item="{{item.pics}}" bindtap="previewImage" mode="aspectFill"></image>
+                    </view>
+                  </view>
+                </view>
+
+              </view>
+            </view>
+
+          </view>
+        </view>
+        <!-- <view wx:if="{{noMore}}" class="no-more-tip">- 没有更多数据了 -</view> -->
+      </view>
+      <view wx:else class="no-answer">
+        快来帮一下楼主，TA在焦急地等待回复~
+      </view>
+    </view>
+  
+  </view>
+    </scroll-view>
+  <!-- 底部输入框 -->
+  <view class="answer-bottom-box" style="bottom:{{height}}px;" hidden="{{!bottomShow}}">
+    <view class="anser-bottom-content">
+      <view class="answer-input-box" wx:if="{{!inputFlag}}">
+        <view class="area-box" bindtap="inputFocus">{{bottom}}{{replyText?replyText:'我来说点什么...'}}</view>
+        <view class="icon-box">
+          <image src="{{staticImageUrl}}{{obj.collectFlag?'hudong_icon_collect_sct.png':'hudong_icon_collect_nor.png'}}" wx:if="{{obj.modifier != userId}}" bindtap="collection" class="bottom-icon"></image>
+          <button open-type="share" class="share-btn">
+            <image src="{{staticImageUrl}}hudong_icon_share.png" class="bottom-icon"></image>
+          </button>
+
+        </view>
+      </view>
+      <!-- 点击后的输入框 -->
+      <view class="focus" wx:if="{{inputFlag}}">
+        <view class="focus-input-wrap {{isIOS?'iosArea':'noIosArea'}}" style="padding:{{this.data.oPPo?'5':''}}rpx 30rpx;">
+          <view class="uploadImg-wrap" wx:if="{{uploadedImg.length!=0}}">
+            <view class="img-box" wx:for="{{uploadedImg}}" wx:key="{{index}}">
+              <image class="upload-img" mode="aspectFill" src="{{item}}" class="upload-img"></image>
+              <image src="{{staticImageUrl}}pic_icon_delete2.png" data-index="{{index}}" bindtap="deleteImg" class="deleted-img" wx:if="{{item}}"></image>
+            </view>
+          </view>
+          <input wx:if="{{oPPo}}" maxlength="-1" show-confirm-bar="{{false}}" fixed auto-focus focus="{{focus}}" cursor-spacing="240" bindinput="textAreaInput" bindfocus="inputFocus" maxlength="500" placeholder="我来说点什么..." adjust-position="{{false}}" bindblur="confirm" bindconfirm="confirm" value="{{replyText}}"
+            style="padding:{{this.data.oPPo?'0':''}}rpx 30rpx;font-size:28rpx;"></input>
+          <textarea wx:else maxlength="-1" auto-height fixed show-confirm-bar="{{false}}"  auto-focus focus="{{focus}}" cursor-spacing="240" bindinput="textAreaInput" bindfocus="inputFocus" maxlength="500" placeholder="我来说点什么..." adjust-position="{{false}}" bindblur="confirm" bindconfirm="confirm" value="{{replyText}}"></textarea>
+        </view>
+      </view>
+
+      <bottom-option height="{{height}}" issue="{{false}}" bindtoSend="getZoneReplyAdd" bindaddImg="uploadImg" bindreTract="inputReTract" wx:if="{{bottomOptShow}}" userInfoStatus='{{userInfoStatus}}'></bottom-option>
+    </view>
+  </view>
+  <!-- 置顶选择框 -->
+  <view class="mask-pop" wx:if="{{toppingSet}}" bindtap="cancelSetting">
+    <view class="pop-box">
+      <view class="choose-box">
+        <view bindtap="setBestAnswer" data-type="{{bestAnswer==1?'cancel':'setting'}}" wx:if="{{obj.createUserId == userId}}">
+          <view wx:if="{{bestAnswer == 0 }}">置为最佳回答</view>
+          <view wx:if="{{bestAnswer == 1 }}">取消最佳回答</view>
+        </view>
+        <view bindtap="deleteAnswer" class="deleteAnswer" wx:if="{{replyUserId == userId}}">删除</view>
+      </view>
+      <view class="cancel" bindtap="cancelSetting">取消</view>
+    </view>
+  </view>
+  <!-- 编辑帖子选择 -->
+  <view class="mask-pop" wx:if="{{editQestion}}" bindtap="cancelEditQuestion" catchtouchmove='true'>
+    <view class="pop-box">
+      <view class="choose-box">
+        <view bindtap="toEditQuestion">编辑</view>
+        <view bindtap="deleteQuestion">删除</view>
+      </view>
+      <view class="cancel" bindtap="cancelEditQuestion">取消</view>
+    </view>
+  </view>
+  <jdNav></jdNav>
+</view>
+<empty-page emptyPageObj="{{emptyPageObj}}" wx:if="{{!isShowDetail}}"></empty-page>

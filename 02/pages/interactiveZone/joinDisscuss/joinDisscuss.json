@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "参与讨论",
+  "usingComponents": {
+    "bottom-option": "/component/bottomOption/bottomOption"
+  }
+}

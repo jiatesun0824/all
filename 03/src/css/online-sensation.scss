@@ -1,0 +1,221 @@
+@import "./mixin.scss";
+.stylist-img {
+  width: 100%;
+  height: 906px;
+  background: url("../../static/image/liuer_detail_bg_01.png") no-repeat center
+    center;
+  background-size: 100% 100%;
+}
+.stylist-info {
+  width: 100%;
+  position: relative;
+  top: -50px;
+  padding: 0 40px;
+  padding-bottom: 50px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-sizing: border-box;
+}
+.stylist-name {
+  display: inline-block;
+  height: 46px;
+  text-align: left;
+  font-family: PingFang-SC-Bold;
+  font-size: 48px;
+  line-height: 46px;
+  font-weight: bold;
+  color: #29cccc;
+  margin-top: 48px;
+}
+.company-logo {
+  width: 102px;
+  height: 102px;
+  display: inline-block;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  background: url("../../static/image/liuer_detail_logo.png") no-repeat;
+  background-size: 100% 100%;
+}
+.stylist-glory {
+  width: 470px;
+  height: 267px;
+  font-family: PingFang-SC-Regular;
+  font-size: 28px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 48px;
+  margin-top: 38px;
+  color: #000000;
+}
+.stylist-works {
+  width: 100%;
+  height: 378px;
+  position: relative;
+  border-radius: 10px;
+  background: url("https://show.ci.sanduspace.com/AA/c_basedesign_recommended/2018/08/27/10/design/designPlanRecommended/render/small/526212_1535337320034.jpg")
+    no-repeat;
+  background-size: cover;
+  margin-top: 60px;
+}
+.goTo720 {
+  width: 180px;
+  height: 68px;
+  background: url("../../static/image/home_icon_3d.png") no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.stylist-works-text {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  font-size: 24px;
+  letter-spacing: 0px;
+  color: #ffffff;
+}
+.stylist-interests {
+  font-family: PingFang-SC-Regular;
+  font-size: 28px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 44px;
+  color: #000000;
+  margin-top: 50px;
+}
+.stylist-interests .interests-culture {
+  display: inline-block;
+  margin: 20px 0;
+  font-size: 28px;
+  color: #000000;
+}
+.stylist-works-two {
+  width: 100%;
+  height: 378px;
+  position: relative;
+  border-radius: 10px;
+  background: url("https://show.ci.sanduspace.com/AA/c_basedesign_recommended/2018/08/25/17/design/designPlanRecommended/render/small/393259_1535187760398.jpg")
+    no-repeat;
+  background-size: cover;
+  margin-top: 46px;
+}
+.AR-design {
+  margin: 0 auto;
+}
+.AR-design-img {
+  text-align: center;
+}
+.AR-design-img img {
+  width: 403px;
+  height: 124px;
+  margin: 80px 0 20px;
+}
+.AR-design-text {
+  font-family: PingFang-SC-Regular;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 48px;
+  font-size: 28px;
+  font-weight: normal;
+  color: #000000;
+  text-align: left;
+}
+.design-text {
+  margin: 20px 0;
+  font-size: 28px;
+  color: #000000;
+}
+.stylist-case {
+  width: 100%;
+  background-color: #ffffff;
+  margin-top: -20px;
+  padding: 30px 30px 20px;
+  box-sizing: border-box;
+}
+.case-video {
+  height: 388px;
+  width: 100%;
+  position: relative;
+}
+.case-video video {
+  width: 100%;
+  border-radius: 10px;
+}
+.case-video-button {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.case-logo {
+  width: 486px;
+  height: 126px;
+  text-align: center;
+  margin: 80px auto 60px;
+  background: url("../../static/image/liuer_detail_title_02.png") no-repeat
+    center center;
+  background-size: cover;
+}
+.case-top {
+  position: relative;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+.individual-case .individual-img {
+  width: 100%;
+  height: 388px;
+  border-radius: 10px;
+  display: inline-block;
+}
+.individual-case .go-to720 {
+  width: 180px;
+  height: 68px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.individual-case .go-to-home {
+  width: 690px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  background-color: #ffba52;
+  box-shadow: 0px 10px 20px 0px rgba(255, 186, 82, 0.3);
+  border-radius: 6px;
+  font-size: 32px;
+  color: #ffffff;
+}
+.stylist-spirit {
+  width: 677px;
+  height: 224px;
+  font-family: PingFang-SC-Regular;
+  font-size: 28px;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: 44px;
+  color: #000000;
+}
+.stylist-spirit p {
+  margin-top: 8px;
+  font-size: 28px;
+  color: #000000;
+}
+.stylist-button {
+  width: 100%;
+  height: 88px;
+}
+.footer-btn {
+  font-size: 32px;
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+  line-height: 44px;
+  color: #ffffff;
+  background-color: #29cccc;
+}

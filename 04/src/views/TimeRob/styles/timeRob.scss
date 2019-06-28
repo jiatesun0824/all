@@ -1,0 +1,316 @@
+.timeRob {
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 88px;
+    background: #f7f7f7;
+    position: relative;
+    overflow: hidden;
+    .noCount {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height: 100%;
+        .noCount_main {
+            width: 560px;
+            height: 400px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            position: absolute;
+            top: 50%;
+            margin-top: -200px;
+            left: 50%;
+            margin-left: -280px;
+            .qiangdan {
+                width: 87px;
+                height: 87px;
+                margin: 0 auto;
+                margin-top: 74px;
+                display: block;
+                margin-bottom: 32px;
+            }
+            .qiangdan_tit {
+                text-align: center;
+                font-size: 24px;
+                color: #333;
+                margin-bottom: 56px;
+            }
+            .noCount_but {
+                width: 448px;
+                height: 72px;
+                background-color: #ff6419;
+                border-radius: 36px;
+                text-align: center;
+                font-size: 24px;
+                color: #fff;
+                margin: 0 auto;
+                line-height: 72px;
+            }
+        }
+    }
+    .budget {
+        transition: all 0.3s linear;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgba(0, 0, 0, 0.3);
+        width: 100%;
+        height: 100%;
+        .budget_main {
+            background: #fff;
+            padding: 0 48px 0 60px;
+            .budget_item {
+                height: 88px;
+                line-height: 88px;
+                color: #333;
+                font-size: 24px;
+                .bugget_activeimg {
+                    width: 30px;
+                    height: 20px;
+                    margin-top: 36px;
+                    float: right;
+                }
+            }
+        }
+    }
+    .budget_active {
+        top: 196px;
+    }
+    .budget_false {
+        top: 100%;
+    }
+    .screen {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        background: rgba(0, 0, 0, 0.3);
+        transition: all 0.3s linear;
+        z-index: 3;
+        .screen_main {
+            background: #fff;
+            width: 620px;
+            height: 100%;
+            position: relative;
+            padding: 33px;
+            box-sizing: border-box;
+            float: right;
+            .screen_confirm {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 80px;
+                line-height: 80px;
+                border-top: solid 0.03333rem #f5f5f5;
+                color: #333;
+                z-index: 1;
+                span {
+                    width: 50%;
+                    float: left;
+                    text-align: center;
+                    background: #fff;
+                }
+                .sure {
+                    color: #fff;
+                    background: #ff6419;
+                }
+            }
+            .wrapper {
+                .box {
+                    background: #fff;
+                    .screen_item {
+                        margin-bottom: 48px;
+                        .screen_title {
+                            font-size: 24px;
+                            color: #666;
+                            line-height: 48px;
+                            height: 48px;
+                        }
+                        .screen_butBox {
+                            display: flex;
+                            flex-wrap: wrap;
+                            justify-content: flex-start;
+                            .screen_but {
+                                width: 2.09rem;
+                                height: 72px;
+                                background-color: #f7f7f7;
+                                border-radius: 4px;
+                                text-align: center;
+                                line-height: 72px;
+                                color: #333;
+                                font-size: 24px;
+                                margin: 0.05rem;
+                            }
+                            .screen_butActive {
+                                background-color: #fff1eb;
+                                color: #ff6419
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .screen_active {
+        left: 0;
+    }
+    .screen_false {
+        left: 100%;
+    }
+    header {
+        background: #f7f7f7;
+    }
+    .wrapper {
+        .box {
+            background: #fafafa;
+            padding: 30px;
+            .robitem {
+                width: 690px;
+                background: #fff;
+                padding-bottom: 30px;
+                position: relative;
+                box-sizing: border-box;
+                border-radius: 4px;
+                margin-bottom: 31px;
+                padding-top: 52px;
+                .robitem_statusimg {
+                    width: 118px;
+                    height: 161px;
+                    position: absolute;
+                    top: -13px;
+                    right: 30px;
+                }
+                .robitem_status_qwimg {
+                    width: 161px;
+                    height: 163px;
+                    position: absolute;
+                    top: 0.5rem;
+                    right: 30px;
+                }
+                .dc_rob {
+                    position: absolute;
+                    right: 30px;
+                    top: 58px;
+                    text-align: center;
+                    line-height: 64px;
+                    width: 196px;
+                    height: 64px;
+                    background-color: #ffffff;
+                    border-radius: 32px;
+                    border: solid 2px #ff6419;
+                    font-size: 24px;
+                    color: #ff6419;
+                }
+                .robitem_title {
+                    font-size: 36px;
+                    color: #ff6419;
+                    padding: 0 30px;
+                    margin-bottom: 18px;
+                    .status_tit {
+                        float: right;
+                        margin-right: 152px;
+                        color: #666;
+                        font-size: 24px;
+                    }
+                }
+                .robitem_pos {
+                    font-size: 24px;
+                    color: #333;
+                    font-weight: bold;
+                    padding: 0 30px;
+                    padding-bottom: 52px;
+                    border-bottom: 1px solid #e5e5e5;
+                    box-sizing: border-box;
+                    margin-bottom: 30px;
+                    span,
+                    img {
+                        vertical-align: middle;
+                    }
+                    .robitem_posimg {
+                        width: 17px;
+                        height: 21px;
+                        margin-right: 3px;
+                    }
+                }
+                .robitem_info {
+                    font-size: 24px;
+                    color: #666;
+                    height: 48px;
+                    line-height: 48px;
+                    padding: 0 30px;
+                }
+                .robitem_pricename {
+                    color: #ff6419;
+                    font-size: 24px;
+                    height: 48px;
+                    line-height: 48px;
+                    padding: 0 30px;
+                    .robitem_name {
+                        float: right;
+                        color: #333;
+                        width: 1.5rem;
+                        overflow: hidden;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        text-align: left;
+                        span,
+                        img {
+                            vertical-align: middle;
+                        }
+                        img {
+                            width: 18px;
+                            height: 20px;
+                        }
+                    }
+                }
+                .paynow {
+                    margin-top: 30px;
+                    text-align: center;
+                    .pay_iconBox {
+                        img {
+                            width: 88px;
+                            height: 88px;
+                        }
+                    }
+                    .pay_tit {
+                        font-size: 24px;
+                        color: #333;
+                        height: 48px;
+                        line-height: 48px;
+                    }
+                    .pay_time {
+                        color: #ff6419;
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+    .tab {
+        width: 100%;
+        height: 88px;
+        background: #f7f7f7;
+        line-height: 88px;
+        color: #333;
+        font-size: 0.32rem;
+        display: flex;
+        justify-content: space-around;
+        span {
+            vertical-align: middle;
+        }
+        img {
+            vertical-align: middle;
+        }
+        .silder_tab_picon {
+            width: 20px;
+            height: 20px;
+        }
+        .silder_tab_jicon {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}

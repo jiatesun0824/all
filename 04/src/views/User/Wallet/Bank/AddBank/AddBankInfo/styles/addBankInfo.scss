@@ -1,0 +1,93 @@
+.addbankinfo {
+    height: 100%;
+    background: #eee;
+    padding-top: 118px;
+    .head {
+        height: 88px;
+        display: flex;
+        align-items: center;
+        padding: 0 30px;
+        background: #fff;
+    }
+    .head_tit {
+        height: 88px;
+        line-height: 108px;
+        font-size: 30px;
+        font-family: PingFang-SC-Medium;
+        color: #999;
+        background: #fafafa;
+        padding: 0 30px;
+        .secicon {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 20px;
+        }
+        span {
+            vertical-align: middle;
+            font-size: 30px;
+        }
+    }
+    .lsit {
+        background: #fff;
+        padding: 0 30px;
+        .item {
+            height: 88px;
+            display: flex;
+            align-items: center;
+            border-bottom: solid 1px #e8e8e8;
+            .inpu {
+                height: 95px;
+                width: 510px;
+                border: none;
+            }
+        }
+        .bbnone {
+            border-bottom: none;
+        }
+    }
+    .box {
+        text-align: center;
+        margin-top: 96px;
+        .next {
+            display: inline-block;
+            width: 600px;
+            line-height: 80px;
+            height: 80px;
+            font-size: 32px;
+            background-color: #ff6419;
+            color: #fff;
+            border-radius: 40px;
+        }
+    }
+    .tit {
+        font-size: 28px;
+        font-family: PingFang-SC-Medium;
+        color: #333;
+        display: inline-block;
+        width: 120px;
+        margin-right: 77px;
+    }
+    .content {
+        font-size: 28px;
+        font-family: PingFang-SC-Medium;
+        color: #333;
+    }
+    .item_j {
+        width: 14px;
+        height: 25px;
+        float: right;
+        vertical-align: middle;
+        margin-left: 260px;
+    }
+    .tit99 {
+        color: #999;
+        font-size: 30px;
+        display: inline-block;
+        width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: inline-block;
+        white-space: nowrap;
+    }
+}

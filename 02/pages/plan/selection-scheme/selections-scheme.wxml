@@ -1,0 +1,40 @@
+<!--选择方案pages/plan/selection-scheme/selections-scheme.wxml.wxml-->
+<!--根据type值返回描述文字和链接  -->
+<view class='selections-scheme'>
+  <!-- 方案列表 -->
+
+    <view class="list" wx:if="{{planList.length>0}}">
+      <view wx:for='{{planList}}' bindtap='switchCheck' data-index='{{index}}'>
+      <view class="list-item" wx:key='{{index}}' data-key='{{index}}'>
+        <view>
+          <image class='checkBtn' src='{{staticImageUrl+(isCheck==index?"choose_icon_sct.png":"choose_icon_nor_01.png")}}' catchtap='switchCheck' data-index="{{index}}">
+          </image>
+        </view>
+        <view class='plan'>
+        <view class="item-img">
+          
+          <image class="btn" src="{{staticImageUrl}}case-logo.gif"></image>
+          <image src='{{item.planPicPath?resourcePath+item.planPicPath:staticImageUrl+"home_pic_no.png"}}'></image>
+        </view>
+        <view class="bottom-box">
+          <view class="left">
+            <view class="name ellipsis fl">{{item.designName}}</view>
+            <view class="date ellipsis fr">{{item.gmtCreate}}</view>
+          </view>
+        </view>
+        </view>
+      </view>
+      <view class='grayLine'></view>
+      </view>
+    </view>
+
+  <!-- 确定按钮 -->
+  <view class='confirm' wx:if="{{planList.length>0}}">
+    <button class='confirmBtn' bindtap='confirmBtn'>{{navaPage=='comment'?'确定':'下一步'}}</button>
+  </view>
+</view>
+<empty-page emptyPageObj="{{emptyPageObj}}" btnHiden="{{true}}" wx:if="{{!planList.length>0}}"></empty-page>
+<!-- 快速导航模块 -->
+<!-- <import src="/component/newNav/newNav.wxml" />
+<template is="newNav" data="{{ ...newNav }}" /> -->
+  <!-- <jdNav></jdNav> -->

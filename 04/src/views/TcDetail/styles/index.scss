@@ -1,0 +1,193 @@
+.detail{
+    .tab{
+        font-size: 34px;
+        color: #fff;
+        position: fixed;
+        padding: 28px 0;
+        width: 100%;
+        z-index: 2;
+        background-image: linear-gradient(0, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
+        .icon-back{
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-size: 100%;
+            background-image: url('./images/nav_icon_back_white.png');
+            left: 30px;
+        }
+    }
+    .banner{
+        z-index: 1;
+        .banner-box{
+            img{
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .content{
+        padding: 30px;
+        border-bottom: 20px solid #f5f5f5;
+        .title{
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .tips{
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            &>span{
+                font-size: 24px;
+                color: #999;
+                margin-right: 60px;
+                .icon{
+                    width: 20px;
+                    height: 20px;
+                    background-size: 100%;
+                    display: inline-block;
+                    vertical-align: center;
+                    margin-right: 10px;
+                }
+                .icon-time{
+                    background-image: url('./images/list_icon_time.png')
+                }
+                .icon-see{
+                    background-image: url('./images/list_icon_see.png')
+                }
+            }
+            .tag{
+                position: absolute;
+                right: 0;
+                top: 0;
+                span{
+                    font-size: 20px;
+                    border: 1px solid #ff6419;
+                    color: #ff6419;
+                    padding: 0 9px;
+                    margin-right: 20px;
+                }
+            }
+        }
+        .company{
+            display: flex;
+            align-items: center;
+            margin: 30px 0;
+
+            img{
+                width: 80px;
+                height: 80px;
+                border-radius: 80px;
+                margin-right: 30px;
+            }
+            .name{
+                font-size: 24px;
+                color: #333;
+            }
+        }
+        .classify{
+            display: flex;
+            font-size: 28px;
+            margin-right: 120px;
+            p{
+                line-height: 1.5;
+            }
+            .type{
+                margin-right: 40px;
+                width: 22%;
+                p{
+                    color: #999;
+                }
+            }
+            .sub{
+                width: 70%;
+                p{
+                    color: #333;
+                }
+            }
+            .addr-icon{
+                position: absolute;
+                right: -76px;
+                width: 44px;
+                height: 44px;
+                bottom: 22px;
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .content-tab{
+        padding: 31px 0 31px 56px;
+        font-size: 28px;
+        span{
+            margin-right: 85px;
+        }
+        .active{
+            color: #ff6419;
+            position: relative;
+            &:after{
+                content: '';
+                width: 40px;
+                height: 4px;
+                background-color: #ff6419;
+                position: absolute;
+                bottom: -31px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    }
+    .borderBottom:after{
+        left: 0;
+    }
+    .service-detail{
+        p{
+            margin: 30px;
+        }
+    }
+    .user-evaluate{
+        margin-bottom:15px 0 30px;
+        .evaluate-item{
+            margin: 15px 30px 30px 30px;
+            display: flex;
+            .avater{
+                width: 60px;
+                height: 60px;
+                margin-right: 30px;
+            }
+            .box{
+                padding-top: 14px;
+                .title{
+                    font-size: 28px;
+                    color: #333;
+                    margin-bottom: 20px;
+                }
+                .label{
+                    font-size: 24px;
+                    margin-bottom: 30px;
+                    span{
+                        background-color: #f5f5f5;
+                        border-radius: 4px;
+                        color: #999999;
+                        padding: 0 9px;
+                    }
+                }
+                .appraise{
+                    font-size: 28px;
+                    color: #333;
+                }
+            }
+            .time{
+                position: absolute;
+                right: 0;
+                top: 21px;
+                font-size: 24px;
+                color: #999;
+            }
+        }
+    }
+}

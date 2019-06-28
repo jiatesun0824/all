@@ -1,0 +1,40 @@
+#app {
+    overflow: hidden;
+}
+
+.cumstomer {
+    height: 100%;
+    background-image: url('../../../static/images/cum_footer_bg_01.png');
+    background-size: 100% 100%;
+    background-position-y: 88px;
+    padding-top: 580px;
+    overflow: hidden;
+    position: relative;
+    .headerImg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+    .title {
+        color: #999;
+        font-size: 30px;
+        text-align: center;
+        margin-bottom: 30px;
+        .titleicon {
+            color: #ff6419;
+            font-size: 10px;
+            margin-right: 20px;
+        }
+        span {
+            vertical-align: middle;
+        }
+    }
+    .tit {
+        margin-bottom: 30px;
+        font-size: 36px;
+        color: #333;
+        text-align: center;
+    }
+}

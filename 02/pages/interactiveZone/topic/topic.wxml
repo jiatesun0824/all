@@ -1,0 +1,90 @@
+<view class="topic-wrap" wx:if="{{isShowDetail&&obj}}">
+  <image src="{{resourcePath+obj.pics[0].url}}" class="topic-bg" mode="aspectFill"></image>
+  <view class="topic-card">
+    <view class="topic-title">
+      #{{obj.title}}#
+    </view>
+    <view class="topic-desc">
+      {{obj.content}}
+    </view>
+    <view class="topic-card-bottom">
+      <view class="card-left">
+        {{reviews}}篇经验 · {{obj.viewVirtualCount+obj.viewCount}}人关注
+      </view>
+      <view class="card-right">
+        <image src="{{staticImageUrl}}{{obj.collectFlag?'hudong_icon_collect_sct.png':'hudong_icon_collect_nor.png'}}" wx:if="{{obj.modifier != userId}}" bindtap="collection"></image>
+        <!-- <image src="{{staticImageUrl}}hudong_icon_share.png"></image> -->
+        <button open-type="share" class="share-btn">
+          <image src="{{staticImageUrl}}hudong_icon_share.png"></image>
+        </button>
+
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{disccuss}}">
+    <view class="discuss-list" wx:if="{{disccuss.length != 0}}">
+      <view class="discuss-item" wx:for="{{disccuss}}" wx:key="{{index}}">
+        <view class="commentator-box">
+          <view class="commentator-msg">
+            <image src="{{item.authorPic}}" mode="aspectFill" wx:if="{{item.authorPic}}" class="commentator-image"></image>
+            <image src="{{staticImageUrl}}index.png" wx:else class="commentator-image"></image>
+
+          </view>
+          <view class="user-desc-box">
+            <view class="name-box">
+              <view class="commentator-name">{{item.creator}}</view>
+
+            </view>
+            <!-- <view class="commentator-address">{{item.address}}</view> -->
+          </view>
+        </view>
+
+        <text class="discuss-msg item{{index}} {{item.over?' unellipsis ':'topic-ellipsis'}}">{{item.content}}</text>
+        <view class="show-text" data-index="{{index}}" bindtap="showAllText" wx:if="{{item.show}}">
+          <view>
+            {{item.over?'展开全文':'收起'}}
+          </view>
+        </view>
+        <view class="img-box" wx:if="{{item.pics.length != 0}}">
+          <image src="{{resourcePath+items.url}}" wx:for="{{item.pics}}" wx:for-item="items" wx:key="{{index}}" data-index="{{index}}" data-item="{{item.pics}}" class="user-upload-Img" bindtap='previewImage' mode="aspectFill"></image>
+        </view>
+        <view class="item-bottom">
+          <view class="item-time">{{item.gmtModified}}</view>
+          <view class="bottom-right">
+            <view class="item-like">
+              <view class="like-box {{item.likeFlag?'active':''}}" wx:if="{{item.likeCount+item.likeVirtualCount != 0}}">{{item.likeCount+item.likeVirtualCount }}
+              </view>
+              <image src="{{staticImageUrl}}{{item.likeFlag?'hudong_icon_zan_sct.png':'hudong_icon_zan_nor.png'}}" class="like" data-index="{{index}}" data-id="{{item.id}}" mode="aspectFit" bindtap="getZoneStatus"></image>
+            </view>
+            <image src="{{staticImageUrl}}hudong_icon_more_01.png" class="opt-btn" data-index="{{index}}" data-id="{{item.id}}" data-replyid="{{item.replyUserId}}" data-topicid="{{item.topicId}}" bindtap="settingClik" mode="aspectFit" wx:if="{{item.replyUserId == userId}}"></image>
+          </view>
+        </view>
+
+      </view>
+    </view>
+    <view class="no-comment " wx:else>
+      留下你的看法，找志同道合的业主~
+    </view>
+  </view>
+
+
+  <!-- <view wx:if="{{noMore&&replyuser.length!=0}}" class="no-more-tip">- 没有更多了 -</view> -->
+  <button class="join-in" data-id="{{id}}" data-title="{{obj.title}}" open-type='getUserInfo' bindgetuserinfo='toJoin' lang='zh_CN' wx:if='{{userInfoStatus==0}}'>
+    我要参与讨论
+  </button>
+  <view class="join-in" data-id="{{id}}" data-title="{{obj.title}}" bindtap='toJoin' wx:if='{{userInfoStatus==1}}'>
+    我要参与讨论
+  </view>
+  <!-- 弹窗 -->
+  <view class="mask-pop" wx:if="{{editQestion}}" bindtap="cancelEdit" catchtouchmove='true'>
+    <view class="pop-box">
+      <view class="choose-box">
+        <view bindtap="toEditQuestion" data-msg="{{editMsg}}" bindtap="editDisscuss" >编辑</view>
+        <view bindtap="deleteQuestion" data-id="{{clickId}}" bindtap="deletedReply">删除</view>
+      </view>
+      <view class="cancel" bindtap="cancelEditQuestion" bindtap="cancelEdit">取消</view>
+    </view>
+  </view>
+  <jdNav></jdNav>
+</view>
+<empty-page emptyPageObj="{{emptyPageObj}}" wx:else="{{!isShowDetail}}"></empty-page>

@@ -1,0 +1,29 @@
+.bottom-btn-wrap {
+  display: flex;
+  padding: 20rpx 30rpx;
+  justify-content: space-between;
+  border-top: 2rpx solid #eee;
+}
+
+.bottom-image-box {
+  display: flex;
+}
+
+.bottom-image-box image {
+  width: 60rpx;
+  height: 60rpx;
+  margin-right: 15px;
+}
+
+.send-btn {
+  width: 148rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  background-color: #29cccc;
+  border-radius: 32rpx;
+  text-align: center;
+  color: #fff;
+  font-size: 28rpx;
+  margin: 0;
+  padding: 0;
+}

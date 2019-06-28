@@ -1,0 +1,43 @@
+1、创建一个项目
+其中第一个位置的m_online是指你的项目名，第二个位置的mobile.sanduspace.cn是指你打包的apk的包名。
+cordova create m_online mobile.sanduspace.cn
+cordova create mm_online3 m.sanduspace.com
+2、增加cordova平台
+进入你建立的项目目录m_online,在命令行中敲入以下命令：
+cordova platform add android@6.3.0
+3、增加插件
+cordova plugin add cordova-hot-code-push-plugin
+cordova plugin add cordova-plugin-file-transfer
+//mobile.sanduspace.cn
+cordova plugin add cordova-plugin-wechat --variable wechatappid=wx364f22b2d824b50d
+cordova plugin add cordova-plugin-alipay-v2 --variable APP_ID=2016092301955254
+//m.sanduspace.com （同城联盟）
+cordova plugin add cordova-plugin-alipay-v2 --variable APP_ID=2018070360521269
+cordova plugin add cordova-plugin-wechat --variable wechatappid=wxd4934d0dab14d276  --这个不行了，用下面行
+cordova plugin add cordova-plugin-wechatv2 --variable wechatappid=wxd4934d0dab14d276  
+
+Android6.0 运行时权限插件cordova-plugin-android-permissions
+添加插件运行时权限插件：
+cordova plugin add cordova-plugin-android-permissions
+
+
+//相片
+cordova plugin add cordova-plugin-camera
+
+
+热更新
+cordova-hcp build
+
+cordova build --release android
+
+签名
+jarsigner -verbose -keystore C:\cordova\mobile.keystore -signedjar C:\cordova\wlh_test\appout\mm_ci_apk_1.1.0.apk  C:\cordova\wlh_test\platforms\android\build\outputs\apk\android-release-unsigned.apk mobile.keystore --storepass sanduspace
+
+
+jarsigner -verbose -keystore C:\cordova\mobile.keystore -signedjar C:\cordova\mm.ci.apk\appout\mm_ci_apk_1.1.0_验证壳升级.apk  C:\cordova\mm.ci.apk\platforms\android\build\outputs\apk\android-release-unsigned.apk mobile.keystore --storepass sanduspace
+
+jarsigner -verbose -keystore C:\cordova\mobile.keystore -signedjar C:\cordova\\mm.online.apk\appout\mm_online_apk_1.1.0_小程序体验.apk  C:\cordova\\mm.online.apk\platforms\android\build\outputs\apk\android-release-unsigned.apk mobile.keystore --storepass sanduspace
+
+jarsigner -verbose -keystore C:\cordova\mobile.keystore -signedjar C:\cordova\m.ci.apk\appout\m_ci_apk_1.0.0.4.apk  C:\cordova\m.ci.apk\platforms\android\build\outputs\apk\android-release-unsigned.apk mobile.keystore --storepass sanduspace
+
+<script src=loadingoverlay.min.js></script><script src=cordova.js></script><script src=chcp.js></script><script src=update.js></script>

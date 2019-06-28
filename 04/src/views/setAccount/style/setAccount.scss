@@ -1,0 +1,108 @@
+.setAccount {
+    height: 100%;
+    background: #f5f5f5;
+    box-sizing: border-box;
+    padding-top: 88px;
+    .Userprotocol {
+        margin-top: 20px;
+        margin-left: 30px;
+        .UserprotocolTit {
+            font-size: 24px;
+            color: #999;
+            vertical-align: middle;
+        }
+        .UserprotocolBut {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            margin-right: 20px;
+        }
+    }
+    .line {
+        height: 20px;
+    }
+    .constType {
+        padding: 0 30px;
+        background: #fff;
+        .type_title {
+            height: 88px;
+            line-height: 88px;
+            font-size: 30px;
+            color: #333;
+        }
+        .type_item {
+            height: 88px;
+            line-height: 88px;
+            font-size: 30px;
+            color: #333;
+            .item_selicon {
+                width: 30px;
+                height: 30px;
+                vertical-align: middle;
+            }
+            span {
+                vertical-align: middle;
+            }
+        }
+    }
+    .box {
+        position: relative;
+        padding: 0 30px;
+        background: #fff;
+        .inpu {
+            width: 650px;
+            height: 88px;
+            font-size: 32px;
+            font-family: PingFang-SC-Regular;
+            color: #333;
+            border: 0;
+            outline: none;
+        }
+        .icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        .get-code {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 240px;
+            height: 88px;
+            line-height: 88px;
+            font-size: 32px;
+            font-family: PingFang-SC-Regular;
+            z-index: 1;
+            text-align: center;
+        }
+    }
+    .butbox {
+        text-align: center;
+        margin-top: 144px;
+        .butfalse {
+            display: inline-block;
+            width: 600px;
+            height: 88px;
+            line-height: 88px;
+            background-image: linear-gradient(-90deg, #999999 0%, #c8c8c8 100%), linear-gradient( #ff6419, #ff6419);
+            background-blend-mode: normal, normal;
+            border-radius: 44px;
+            font-size: 36px;
+            color: #fff;
+            letter-spacing: 10px;
+        }
+        .buttrue {
+            display: inline-block;
+            width: 600px;
+            height: 88px;
+            line-height: 88px;
+            background-image: linear-gradient(-90deg, #ff6419 0%, #ffa072 100%), linear-gradient( #ff6419, #ff6419);
+            background-blend-mode: normal, normal;
+            border-radius: 44px;
+            font-size: 36px;
+            color: #fff;
+            letter-spacing: 10px;
+        }
+    }
+}

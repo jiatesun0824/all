@@ -1,0 +1,15 @@
+.swiper-pagination{
+    width: 100%;
+    bottom: 30px;
+    .swiper-pagination-bullet{
+        background-color: #fff;
+        width: 6px;
+        height: 6px;
+        display: inline-block;
+        margin-right: 6px;
+        opacity: 1;
+    }
+    .swiper-pagination-bullet-active{
+        width: 18px;
+    }
+}

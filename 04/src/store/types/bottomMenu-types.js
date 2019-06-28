@@ -1,0 +1,5 @@
+const CHANGE_ACTIVE_TAB = 'CHANGE_ACTIVE_TAB'
+
+export {
+  CHANGE_ACTIVE_TAB
+}

@@ -1,0 +1,71 @@
+.addbank {
+    height: 100%;
+    background: #eee;
+    padding-top: 88px;
+    .haveBank {
+        height: 88px;
+        line-height: 88px;
+        padding: 0 30px;
+        color: #333;
+        font-size: 30px;
+        background: #fff;
+        .bankPerName {
+            margin-left: 46px;
+        }
+    }
+    .tit {
+        height: 88px;
+        background: #fafafa;
+        padding: 0 30px;
+        line-height: 108px;
+        font-size: 24px;
+        font-family: PingFang-SC-Bold;
+        color: #999;
+    }
+    .inpu {
+        background: #fff;
+        height: 88px;
+        display: flex;
+        align-items: center;
+        padding: 0 30px;
+        font-size: 28px;
+        font-family: PingFang-SC-Bold;
+        color: #333;
+        .inpu-tit {
+            display: inline-block;
+            text-align: left;
+            width: 20%;
+            height: 95px;
+            line-height: 95px;
+            font-size: 30px;
+            color: #333;
+            vertical-align: middle;
+        }
+        input {
+            width: 80%;
+            height: 95px;
+            border: none;
+            vertical-align: middle
+        }
+        .pinpu {
+            font-size: 28px;
+            font-family: PingFang-SC-Bold;
+            color: #333;
+        }
+    }
+    .box {
+        text-align: center;
+        margin-top: 96px;
+        .next {
+            width: 600px;
+            height: 80px;
+            background-color: #ff6419;
+            border-radius: 40px;
+            display: inline-block;
+            line-height: 80px;
+            font-size: 36px;
+            font-family: PingFang-SC-Bold;
+            color: #fff;
+        }
+    }
+}

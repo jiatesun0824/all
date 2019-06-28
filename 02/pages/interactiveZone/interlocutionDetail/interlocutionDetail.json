@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "bottom-option":"/component/bottomOption/bottomOption",
+    "jdNav": "/component/jdNav/jdNav",
+    "empty-page": "/component/emptyPage/emptyPage"
+  },
+  "navigationBarTitleText": "问答详情"
+}

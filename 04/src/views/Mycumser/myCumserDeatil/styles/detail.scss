@@ -1,0 +1,338 @@
+.mycumserdetail {
+    height: 100%;
+    box-sizing: border-box;
+    .payToast {
+        height: 100%;
+        width: 100%;
+        background: rgba($color: #000000, $alpha: 0.3);
+        position: absolute;
+        top: 0;
+        left: 0;
+        .payToast_main {
+            width: 560px;
+            height: 384px;
+            background-color: #ffffff;
+            border-radius: 20px;
+            position: absolute;
+            top: 50%;
+            margin-top: -192px;
+            left: 50%;
+            margin-left: -280px;
+            padding: 23px;
+            .close {
+                text-align: right;
+                margin-bottom: 70px;
+                img {
+                    width: 26px;
+                    height: 26px;
+                }
+            }
+            .price {
+                font-size: 40px;
+                color: #333;
+                text-align: center;
+                .price_tit {
+                    font-size: 24px;
+                    color: #999;
+                }
+            }
+            .price_but {
+                text-align: center;
+                font-size: 24px;
+                color: #fff;
+                margin-top: 32px;
+                span {
+                    width: 448px;
+                    height: 72px;
+                    background-color: #ff6419;
+                    border-radius: 36px;
+                    line-height: 72px;
+                    display: inline-block;
+                }
+            }
+            .but_tit {
+                text-align: center;
+                font-size: 24px;
+                color: #999;
+                margin-top: 24px;
+            }
+        }
+    }
+    .main {
+        background: #f7f7f7;
+        padding: 118px 30px 30px 30px;
+        height: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+        .box {
+            background: #fff;
+            padding: 37px;
+            padding-top: 43px;
+            .head {
+                line-height: 48px;
+                margin-bottom: 50px;
+                .name {
+                    font-size: 40px;
+                    color: #333;
+                    line-height: 80px;
+                }
+                .phone {
+                    font-size: 24px;
+                    color: #333;
+                }
+                .status {
+                    font-size: 24px;
+                    color: #ff6419;
+                }
+                .callImg {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 72px;
+                    height: 72px;
+                    top: 43px;
+                    right: 37px;
+                }
+            }
+            .paySuccess {
+                margin-bottom: 138px;
+                .paySuccess_IconBox {
+                    text-align: center;
+                    margin-bottom: 40px;
+                    img {
+                        width: 87px;
+                        height: 87px;
+                    }
+                }
+                .paySuccess_title {
+                    font-size: 28px;
+                    color: #333;
+                    margin-bottom: 24px;
+                    text-align: center;
+                }
+                .paySuccess_tit {
+                    font-size: 24px;
+                    color: #999;
+                    margin-bottom: 64px;
+                    text-align: center;
+                }
+                .paySuccess_ButBox {
+                    margin-bottom: 16px;
+                    text-align: center;
+                    .paySuccess_But {
+                        width: 610px;
+                        height: 72px;
+                        background-color: #ff6419;
+                        border-radius: 36px;
+                        display: inline-block;
+                        line-height: 72px;
+                        color: #fff;
+                        font-size: 28px;
+                    }
+                }
+                .paySuccess_ButTit {
+                    font-size: 24px;
+                    color: #999;
+                    text-align: justify;
+                }
+            }
+            .result {
+                margin-bottom: 71px;
+                .tit {
+                    font-size: 24px;
+                    color: #999;
+                    line-height: 48px;
+                    margin-bottom: 23px;
+                }
+                .gameOver {
+                    background-color: #fff9f6;
+                    padding: 30px;
+                    .gameOver_tit {
+                        font-size: 24px;
+                        color: #ff6419;
+                    }
+                    .gameOver_price {
+                        font-size: 47px;
+                        color: #ff6419;
+                        span {
+                            font-size: 24px;
+                        }
+                    }
+                }
+                .money {
+                    padding: 24px;
+                    height: 130px;
+                    background-color: #fff9f6;
+                    color: #ff6419;
+                    font-size: 24px;
+                    .money_price {
+                        font-size: 47px;
+                        line-height: 96px;
+                    }
+                }
+                .intention {
+                    text-align: left;
+                    span {
+                        width: 206px;
+                        height: 64px;
+                        background-color: #f25253;
+                        border-radius: 32px;
+                        display: inline-block;
+                        line-height: 64px;
+                        text-align: center;
+                        color: #fff;
+                        font-size: 28px;
+                        margin-right: 24px;
+                    }
+                    .noint {
+                        background-color: #ff6419;
+                    }
+                }
+            }
+            .body {
+                .title {
+                    font-size: 28px;
+                    color: #333;
+                    margin: 30px 0;
+                    .edit_img {
+                        float: right;
+                        width: 24px;
+                        height: 22px;
+                    }
+                }
+                .mt89 {
+                    margin-top: 89px;
+                }
+                .body_item {
+                    font-size: 24px;
+                    color: #333;
+                    line-height: 48px;
+                }
+                .quotation_head {
+                    height: 56px;
+                    line-height: 56px;
+                    color: #333;
+                    font-size: 28px;
+                    .quotation_head_val {
+                        float: right;
+                        color: #ff6419;
+                    }
+                }
+                .payFail {
+                    border-bottom: 1px solid #f5f5f5;
+                    padding: 40px 0;
+                    margin-bottom: 50px;
+                    img {
+                        width: 87px;
+                        height: 87px;
+                        display: block;
+                        margin: 0 auto;
+                    }
+                    .payFail_title {
+                        font-size: 28px;
+                        color: #333;
+                        margin-top: 43px;
+                        text-align: center;
+                    }
+                    .payFail_tit {
+                        font-size: 24px;
+                        color: #999;
+                        text-align: center;
+                        line-height: 48px;
+                    }
+                }
+                .quotation {
+                    background-color: #fff9f6;
+                    padding: 16px;
+                    .quotation_item {
+                        display: flex;
+                        justify-content: space-around;
+                        div {
+                            width: 50%;
+                            color: 24px;
+                            font-size: 24px;
+                            line-height: 48px;
+                            span {
+                                color: #666;
+                                margin-right: 30px;
+                            }
+                        }
+                    }
+                }
+                .plan720 {
+                    height: 349px;
+                    margin-top: 16px;
+                    position: relative;
+                    .planImg {
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .plan720_tit {
+                        position: absolute;
+                        top: 50%;
+                        margin-top: -34px;
+                        left: 50%;
+                        margin-left: -90px;
+                        width: 180px;
+                        height: 68px;
+                        background-image: linear-gradient(-53deg, #29cccc 0%, #2cd9ba 60%, #2ee5a8 100%), linear-gradient( #29cccc, #29cccc);
+                        background-blend-mode: normal, normal;
+                        border-radius: 34px;
+                        opacity: 0.8;
+                        line-height: 68px;
+                        text-align: center;
+                        font-size: 28px;
+                        color: #fff;
+                    }
+                }
+                .body_but_tit {
+                    text-align: center;
+                    font-size: 24px;
+                    color: #ff6419;
+                    margin-bottom: 24px;
+                    margin-top: 71px;
+                }
+                .body_but {
+                    width: 611px;
+                    height: 73px;
+                    background-color: #ff6419;
+                    border-radius: 36px;
+                    text-align: center;
+                    font-size: 28px;
+                    color: #fff;
+                    line-height: 73px;
+                    margin: 0 auto;
+                }
+                .refundStatus {
+                    height: 48px;
+                    line-height: 48px;
+                    text-align: right;
+                    font-size: 24px;
+                    color: #ff6419;
+                    .refundReason {
+                        text-align: left;
+                        color: #333;
+                    }
+                }
+                .refundBox {
+                    border-top: solid 1px #f5f5f5;
+                    padding-top: 33px;
+                    margin-top: 42px;
+                    .refundbut {
+                        float: right;
+                        width: 160px;
+                        height: 56px;
+                        background-color: #ffffff;
+                        border-radius: 28px;
+                        border: solid 1px #d7d7d7;
+                        text-align: center;
+                        line-height: 56px;
+                        border: solid 1px #d9d9d9;
+                        font-size: 28px;
+                        color: #333;
+                    }
+                }
+            }
+        }
+    }
+}

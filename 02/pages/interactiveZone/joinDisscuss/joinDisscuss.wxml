@@ -1,0 +1,31 @@
+<view class="disscuss-wrap">
+  <view class="disscuss">
+    <view class="textarea-box {{focusFlag?'pullheight':'helfheight'}}" >
+    <textarea placeholder='和大家一起讨论#{{title}}#' focus="{{focus}}" bindinput="areaInput" maxlength="1000" bindfocus="inputfocus" bindblur="inputBlur" placeholder-class='placeholder' adjust-position="{{false}}" bindconfirm="inputComfirm" value="{{text}}" class="{{height==0&&focusFlag?'pullheight':'helfheight'}}"></textarea>
+    </view>
+    <view class="img-box" wx:if="{{!focusFlag}}">
+      <view wx:if="{{pics.length != 0}}" class="upload-wrap upload" wx:for="{{pics}}" wx:key="{{index}}">
+        <image src="{{resourcePath+item.url}}" class="uploadImg" mode="aspectFill" />
+        <image src="{{staticImageUrl}}pic_icon_delete.png" data-index="{{index}}" data-type="edit" bindtap="deletePicImg" class="delete-img" />
+      </view>
+
+      <view class='upload-wrap' wx:for="{{uploadedImg}}" wx:key="{{index}}">
+        <image src="{{item}}" class="uploadImg" mode="aspectFill"/>
+        <image src="{{staticImageUrl}}pic_icon_delete2.png" class="delete-img" wx:if="{{item}}" data-index="{{index}}" bindtap="deleteImg" />
+      </view>
+      <image src="{{staticImageUrl}}icon-addimg.png"  wx:if="{{pics.length+uploadedImg.length >= 6?false:true}}" bindtap="chooseImg" class="add-img" />
+    </view>
+    <view wx:if="{{!focusFlag}}">
+      <!-- <view class="location-box" bindtap="chooseAddress">
+        <image src="{{staticImageUrl}}me_icon_adress (2).png" class="location-icon"></image> {{userAddress?userAddress:'所在位置'}}
+      </view> -->
+      <view class="release-box" bindtap="release">
+        <view class="release-btn">发布</view>
+      </view>
+    </view>
+    <view class="bottom" wx:if="{{focusFlag}}" style="bottom:{{height}}px;">
+      <bottom-option height="{{height}}"  issue="{{false}}" bindreTract="inputRetract" disscussEdit="{{true}}" bindaddImg="uploadImage" bindtoSend="editFinished" userInfoStatus='{{userInfoStatus}}'></bottom-option>
+    </view>
+  </view>
+
+</view>
