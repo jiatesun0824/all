@@ -1,0 +1,44 @@
+{
+    "name": "com.sandu.cloudhome.common",
+    "displayName": "三度云享家通用版",
+    "version": "1.0.0",
+    "description": "A sample Apache Cordova application that responds to the deviceready event.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Apache Cordova Team",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "cordova-hot-code-push-plugin": "^1.5.3",
+        "cordova-ios": "^4.5.4",
+        "cordova-plugin-alipay-v2": "0.0.4",
+        "cordova-plugin-android-permissions": "^1.0.0",
+        "cordova-plugin-camera": "^4.0.3",
+        "cordova-plugin-file": "^6.0.1",
+        "cordova-plugin-file-transfer": "^1.7.1",
+        "cordova-plugin-inappbrowser": "^3.0.0",
+        "cordova-plugin-wechat": "^2.3.0",
+        "cordova-plugin-whitelist": "^1.3.3"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-hot-code-push-plugin": {},
+            "cordova-plugin-file-transfer": {},
+            "cordova-plugin-file": {},
+            "cordova-plugin-wechat": {
+                "WECHATAPPID": "wxd4934d0dab14d276"
+            },
+            "cordova-plugin-alipay-v2": {
+                "APP_ID": "2018070360521269"
+            },
+            "cordova-plugin-whitelist": {},
+            "cordova-plugin-inappbrowser": {},
+            "cordova-plugin-android-permissions": {},
+            "cordova-plugin-camera": {}
+        },
+        "platforms": [
+            "ios"
+        ]
+    }
+}

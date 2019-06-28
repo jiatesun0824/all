@@ -1,0 +1,41 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-hot-code-push-plugin": {
+      "PACKAGE_NAME": "com.sandu.cloudhome.common"
+    },
+    "cordova-plugin-alipay-v2": {
+      "APP_ID": "2018070360521269",
+      "PACKAGE_NAME": "com.sandu.cloudhome.common"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.sandu.cloudhome.common"
+    },
+    "cordova-plugin-file-transfer": {
+      "PACKAGE_NAME": "com.sandu.cloudhome.common"
+    },
+    "cordova-plugin-wechat": {
+      "WECHATAPPID": "wxd4934d0dab14d276",
+      "PACKAGE_NAME": "com.sandu.cloudhome.common"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.sandu.cloudhome.common"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.sandu.cloudhome.common"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.sandu.cloudhome.common"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "com.sandu.cloudhome.common"
+    }
+  },
+  "dependent_plugins": {}
+}
