@@ -33,7 +33,7 @@
     "imagemin-webpack-plugin": "^1.5.0-beta.0",
     "jquery": "^3.2.1",
     "localforage": "^1.7.1",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.19",
     "lrz": "^4.9.40",
     "moment": "^2.22.1",
     "normalize.scss": "^0.1.0",
