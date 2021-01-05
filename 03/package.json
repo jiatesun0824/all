@@ -18,7 +18,7 @@
     "build:dev": "cross-env BUILD_ENV=dev node build/build.js"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "cross-env": "^5.2.0",
     "fastclick": "^1.0.6",
     "good-storage": "^1.0.1",
